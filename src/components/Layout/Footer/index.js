@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 const Footer = () => {
     return (
-        <div className={classNames(styles.footerWrapper, "container")}>
+        <footer className={classNames(styles.footerWrapper, "container")}>
             <div className={styles.footerTop}>
                 <div className={styles.leftSide}>
                     <img src={"/images/layout/footer-logo.png"} alt=""/>
@@ -19,7 +19,7 @@ const Footer = () => {
             <div className={styles.footerBottom}>
                 Copyright (c) EDUCATION SOLUTIONS VIET NAM.,LTD. All Rights Reserved
             </div>
-        </div>
+        </footer>
     )
 }
 

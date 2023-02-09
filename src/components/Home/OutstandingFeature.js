@@ -1,18 +1,42 @@
 import React, {useState} from "react";
 
-import styles from "./OutstandingFeature.module.scss";
+import Avatar from "../../assets/icons/ic-avt.svg"
 
-const tabs = [
-    {
-        tabName: "overview"
-    },
-    {
-        tabName: "student"
-    },
-]
+import styles from "./OutstandingFeature.module.scss";
+import classNames from "classnames";
+
+const TABS = {
+    OVERVIEW: 'overview',
+    STUDENT: 'student',
+    TEACHER: 'teacher',
+    PARENTS: 'parents',
+    SCHOOL: 'school'
+}
 
 const OutstandingFeature = () => {
-    const [activeTab, setActiveTab] = useState(tabs[0].tabName);
+    const tabItems = [
+        {
+            tabName: 'Tổng quan',
+            tabValue: TABS.OVERVIEW
+        },
+        {
+            tabName: 'Học viên',
+            tabValue: TABS.STUDENT
+        },
+        {
+            tabName: 'Phụ huynh',
+            tabValue: TABS.PARENTS
+        },
+        {
+            tabName: 'Giáo viên',
+            tabValue: TABS.TEACHER
+        },
+        {
+            tabName: 'Nhà trường',
+            tabValue: TABS.SCHOOL
+        },
+    ];
+    const [activeTab, setActiveTab] = useState(TABS.OVERVIEW);
     const switchTab = (tabName) => {
         setActiveTab(tabName);
     }
@@ -27,32 +51,45 @@ const OutstandingFeature = () => {
             <div className={styles.featureTabs}>
                 <div className={styles.tabs}>
                     <div className={styles.tabItems}>
-                        <button onClick={() => switchTab(tabs[0].tabName)}>
-                            Tổng quan
-                        </button>
-                        <button onClick={() => switchTab(tabs[1].tabName)}>
-                            Học viên
-                        </button>
-                        <button>
-                            Phụ huynh
-                        </button>
-                        <button>
-                            Giáo viên
-                        </button>
-                        <button>
-                            Nhà trường
-                        </button>
+                        {tabItems.map(item => (
+                            <button key={item.tabValue} className={
+                                classNames({
+                                    [styles.active]: activeTab === item.tabValue
+                                })}
+                                    onClick={() => switchTab(item.tabValue)}>
+                                <div>
+                                    <Avatar/>
+                                </div>
+                                {item.tabName}
+                            </button>))}
                     </div>
 
                     <div className={styles.tabContent}>
                         {
-                            activeTab === "overview" &&
+                            activeTab === TABS.OVERVIEW &&
                             <div>
                                 <img src="/images/home/outstanding-feature/overview.png"/>
                             </div>
                         }
                         {
-                            activeTab === "student" && <img src="/images/home/outstanding-feature/student.png"/>
+                            activeTab === TABS.STUDENT && <div>
+                                <img src="/images/home/outstanding-feature/student.png"/>
+                            </div>
+                        }
+                        {
+                            activeTab === TABS.PARENTS && <div>
+                                <img src="/images/home/outstanding-feature/parent.png"/>
+                            </div>
+                        }
+                        {
+                            activeTab === TABS.TEACHER && <div>
+                                <img src="/images/home/outstanding-feature/teacher.png"/>
+                            </div>
+                        }
+                        {
+                            activeTab === TABS.SCHOOL && <div>
+                                <img src="/images/home/outstanding-feature/school.png"/>
+                            </div>
                         }
                     </div>
                 </div>
@@ -61,4 +98,5 @@ const OutstandingFeature = () => {
     );
 }
 
-export default OutstandingFeature;
+export default OutstandingFeature
+;
