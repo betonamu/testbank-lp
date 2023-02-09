@@ -1,0 +1,30 @@
+@import "../../../assets/scss/global";
+
+.footer-wrapper {
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+
+        .left-side {
+            img {
+                width: 164px;
+                height: auto;
+            }
+        }
+
+        .right-side {
+
+        }
+    }
+
+    .footer-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 65px;
+        background: #FFFFFF;
+        border-top: 1px solid #B8B8CC;
+        color: $grey;
+        font-size: 13px;
+    }
+}

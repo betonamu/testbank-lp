@@ -1,0 +1,33 @@
+@import "./variables";
+
+@mixin smallScreen {
+    @media screen and (min-width: #{$small-screen}) {
+        @content;
+    }
+}
+
+@mixin mediumScreen {
+    @media screen and (min-width: #{$medium-screen}) {
+        @content;
+    }
+}
+
+@mixin largeScreen {
+    @media screen and (min-width: #{$large-screen}) {
+        @content;
+    }
+}
+
+@mixin darkMode {
+    [data-theme="dark"] {
+        @content;
+    }
+}
+
+@mixin button {
+    outline: none;
+    cursor: pointer;
+    &:hover {
+        outline: none;
+    }
+}
