@@ -7,7 +7,7 @@ import SignupTrial from "@/components/Home/SignupTrial";
 
 export default function Home() {
     return (
-        <div className={"container"}>
+        <div >
             <Banner/>
             <OutstandingFeature/>
             <Subscribe/>

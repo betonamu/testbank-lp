@@ -8,14 +8,14 @@ body {
 
 .container {
     max-width: 1280px;
-    width: 100%;
+    width: 100% !important;
     padding: 1rem;
-    margin: 1rem;
+    margin: 0 auto;
     box-sizing: border-box;
 
     @include largeScreen {
-        padding: 0;
-        margin: 0;
+        padding: 3rem;
+        margin: 0 auto;
     }
 }
 
@@ -25,4 +25,8 @@ button {
 
 input, button {
     font-family: $font-family;
+}
+
+p{
+    margin: 0;
 }

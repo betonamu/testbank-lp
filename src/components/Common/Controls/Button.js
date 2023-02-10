@@ -3,10 +3,11 @@ import classNames from "classnames";
 
 import styles from "./Button.module.scss";
 
-const Button = ({children, className, disable, type}) => {
+const Button = ({children, className, disable, type, icon}) => {
     return (
         <button disabled={disable}
                 className={classNames(styles.button, styles[type], className)}>
+            {icon}
             {children}
         </button>
     )

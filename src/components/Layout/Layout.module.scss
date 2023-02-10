@@ -1,3 +1,5 @@
+@import "../../assets/scss/global";
+
 .master-layout {
     display: flex;
     flex-direction: column;
@@ -5,9 +7,12 @@
     align-items: center;
 
     .content {
-        flex-grow: 1;
-        display: flex;
         width: 100vw;
-        justify-content: center;
+
+        @include largeScreen {
+            display: flex;
+            flex-grow: 1;
+            justify-content: center;
+        }
     }
 }

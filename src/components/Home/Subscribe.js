@@ -1,10 +1,12 @@
 import React, {useState} from "react";
-
-import styles from "./Subscribe.module.scss";
 import classNames from "classnames";
-import Avatar from "@/assets/icons/ic-avt.svg";
+
 import {studentPricings} from "@/components/Home/data/price";
 import Button from "@/components/Common/Controls/Button";
+
+import TickIcon from "../../assets/icons/tick.svg";
+
+import styles from "./Subscribe.module.scss";
 
 const TABS = {
     STUDENT: 'student',
@@ -32,15 +34,15 @@ const Subscribe = () => {
         },
     ];
 
-    const [activeTab, setActiveTab] = useState(TABS.OVERVIEW);
+    const [activeTab, setActiveTab] = useState(TABS.STUDENT);
     const switchTab = (tabName) => {
         setActiveTab(tabName);
     }
 
     return (
-        <div className={styles.subscribeWrapper}>
+        <div className={classNames(styles.subscribeWrapper, "container")}>
             <div className={styles.top}>
-                <h3>Tính năng nổi bật</h3>
+                <h3>Bạn đã sẵn sàng</h3>
 
                 <h2>
                     Trải nghiệm i-test<br/> ngay hôm nay?
@@ -67,7 +69,13 @@ const Subscribe = () => {
                                 <h2>{item.price}</h2>
 
                                 {item.descriptions.map(des => (
-                                    <p>{des}</p>
+                                    <div className={styles.desItem}>
+                                        <span><TickIcon/></span>
+                                        <div>
+                                            <p>{des.label}</p>
+                                            {des.option && <p>{des.option}</p>}
+                                        </div>
+                                    </div>
                                 ))}
 
                                 <Button type="outline" className={styles.selectBtn}>Chọn</Button>
@@ -78,6 +86,33 @@ const Subscribe = () => {
 
             </div>
             <div className={styles.bottom}>
+                <h3>Những con số ấn tượng</h3>
+                <div className={styles.content}>
+                    <div className={styles.item}>
+                        <p>2,467</p>
+                        <p>
+                            <span>Tài khoản</span><br/> đang sử dụng
+                        </p>
+                    </div>
+                    <div className={styles.item}>
+                        <p>2,467</p>
+                        <p>
+                            <span>Học sinh & phụ huynh</span><br/> tin dùng
+                        </p>
+                    </div>
+                    <div className={styles.item}>
+                        <p>470</p>
+                        <p>
+                            <span>Giáo viên & Nhà trường</span><br/> tham gia tổ chức thi trực tuyến
+                        </p>
+                    </div>
+                    <div className={styles.item}>
+                        <p>1,364 +</p>
+                        <p>
+                            <span>Đề thi</span><br/> được lập ra
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     )

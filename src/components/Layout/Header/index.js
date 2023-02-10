@@ -4,6 +4,7 @@ import classNames from "classnames";
 import Button from "@/components/Common/Controls/Button";
 
 import Logo from "../../../assets/icons/logo.svg";
+import Tick from "../../../assets/icons/tick.svg";
 
 import styles from "./Header.module.scss";
 
@@ -22,8 +23,15 @@ const Header = () => {
                     <option>123</option>
                     <option>123</option>
                 </select>
-                <Button className={styles.btnLogin} type="outline">Đăng nhập</Button>
-                <Button className={styles.btnTrial} type="primary">Dùng thử miễn phí</Button>
+                <Button className={styles.btnLogin}
+                        type="outline">
+                    Đăng nhập
+                </Button>
+                <Button className={styles.btnTrial}
+                        type="primary"
+                        icon={<Tick/>}>
+                    Dùng thử miễn phí
+                </Button>
             </div>
         </header>
     )

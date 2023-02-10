@@ -1,9 +1,9 @@
 import React, {useState} from "react";
+import classNames from "classnames";
 
-import Avatar from "../../assets/icons/ic-avt.svg"
+import AvatarIcon from "../../assets/icons/ic-avt.svg";
 
 import styles from "./OutstandingFeature.module.scss";
-import classNames from "classnames";
 
 const TABS = {
     OVERVIEW: 'overview',
@@ -41,7 +41,7 @@ const OutstandingFeature = () => {
         setActiveTab(tabName);
     }
     return (
-        <div className={styles.outstandingFeatureWrapper}>
+        <div className={classNames(styles.outstandingFeatureWrapper, "container")}>
             <h3>Tính năng nổi bật</h3>
 
             <h2>
@@ -58,7 +58,7 @@ const OutstandingFeature = () => {
                                 })}
                                     onClick={() => switchTab(item.tabValue)}>
                                 <div>
-                                    <Avatar/>
+                                    <AvatarIcon/>
                                 </div>
                                 {item.tabName}
                             </button>))}
@@ -67,28 +67,63 @@ const OutstandingFeature = () => {
                     <div className={styles.tabContent}>
                         {
                             activeTab === TABS.OVERVIEW &&
-                            <div>
+                            <div className={styles.contentWrapper}>
                                 <img src="/images/home/outstanding-feature/overview.png"/>
+                                <div className={classNames(styles.descriptionGroup, styles.number1)}>
+                                    <span><p>1</p></span>
+                                    <p className={styles.description}>Tổng hợp số liệu trực quan</p>
+                                </div>
+                                <div className={classNames(styles.descriptionGroup, styles.number2)}>
+                                    <span><p>2</p></span>
+                                    <p className={styles.description}>Ngân hàng đề thi tiêu chuẩn, đa dạng</p>
+                                </div>
+                                <div className={classNames(styles.descriptionGroup, styles.number3)}>
+                                    <span><p>3</p></span>
+                                    <p className={styles.description}>Giao diện thân thiện</p>
+                                </div>
+                                <div className={classNames(styles.descriptionGroup, styles.number4)}>
+                                    <span><p>4</p></span>
+                                    <p className={styles.description}>Quản lý lịch thi, <br/>bài thi dễ dàng</p>
+                                </div>
                             </div>
                         }
                         {
-                            activeTab === TABS.STUDENT && <div>
-                                <img src="/images/home/outstanding-feature/student.png"/>
+                            activeTab === TABS.STUDENT && <div className={styles.contentWrapper}>
+                                <img src="/images/home/outstanding-feature/overview.png"/>
+                                <div className={styles.descriptionGroup}>
+                                    <span><p>2</p></span>
+                                    <p className={styles.description}>Tổng hợp số liệu trực quan</p>
+                                </div>
                             </div>
                         }
                         {
-                            activeTab === TABS.PARENTS && <div>
-                                <img src="/images/home/outstanding-feature/parent.png"/>
+                            activeTab === TABS.PARENTS &&
+                            <div className={styles.contentWrapper}>
+                                <img src="/images/home/outstanding-feature/overview.png"/>
+                                <div className={styles.descriptionGroup}>
+                                    <span><p>3</p></span>
+                                    <p className={styles.description}>Tổng hợp số liệu trực quan</p>
+                                </div>
                             </div>
                         }
                         {
-                            activeTab === TABS.TEACHER && <div>
-                                <img src="/images/home/outstanding-feature/teacher.png"/>
+                            activeTab === TABS.TEACHER &&
+                            <div className={classNames(styles.contentWrapper, styles.number1)}>
+                                <img src="/images/home/outstanding-feature/overview.png"/>
+                                <div className={styles.descriptionGroup}>
+                                    <span><p>4</p></span>
+                                    <p className={styles.description}>Tổng hợp số liệu trực quan</p>
+                                </div>
                             </div>
                         }
                         {
-                            activeTab === TABS.SCHOOL && <div>
-                                <img src="/images/home/outstanding-feature/school.png"/>
+                            activeTab === TABS.SCHOOL &&
+                            <div className={styles.contentWrapper}>
+                                <img src="/images/home/outstanding-feature/overview.png"/>
+                                <div className={styles.descriptionGroup}>
+                                    <span><p>5</p></span>
+                                    <p className={styles.description}>Tổng hợp số liệu trực quan</p>
+                                </div>
                             </div>
                         }
                     </div>

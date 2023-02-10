@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./Banner.module.scss";
 import Button from "@/components/Common/Controls/Button";
+import classNames from "classnames";
 
 const Banner = () => {
     return (
-        <div className={styles.bannerWrapper}>
+        <div className={classNames(styles.bannerWrapper, "container")}>
             <div className={styles.bannerLeft}>
                 <h1 className={styles.title}>
                     Giải pháp quản lý<br/>
