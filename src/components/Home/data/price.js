@@ -11,7 +11,6 @@ export const studentPricings = [
             },
             {
                 label: "Quản lý bài thi/bài tập đã làm",
-                option: "Nhận và làm bài thi hoặc bài tập được giao.",
             },
         ]
     },
@@ -27,13 +26,16 @@ export const studentPricings = [
             },
             {
                 label: "Quản lý bài thi/bài tập đã làm",
-                option: "Nhận và làm bài thi hoặc bài tập được giao.",
+            },
+            {
+                label: "Có thể tải xuống lên đến 5 đề thi thử và thực hiện thi thử",
+                option: '(có thể tải thêm chỉ với ***** đ/đề)'
             },
         ]
     },
     {
         label: "Gói nâng cao",
-        price: 'Miễn Phí',
+        price: '999,000đ /năm',
         descriptions: [
             {
                 label: "Nhận và làm bài thi hoặc bài tập được giao.",
@@ -43,23 +45,26 @@ export const studentPricings = [
             },
             {
                 label: "Quản lý bài thi/bài tập đã làm",
-                option: "Nhận và làm bài thi hoặc bài tập được giao.",
             },
+            {
+                label: "Có thể tải xuống lên đến 20 đề thi thử và thực hiện thi thử",
+                option: '(có thể tải thêm chỉ với ***** đ/đề)'
+            },
+            {
+                label: 'Không giới hạn số bài tập thực hành'
+            }
         ]
     },
     {
         label: "Gói tuỳ chỉnh",
-        price: 'Miễn Phí',
+        price: 'Gói tuỳ chỉnh',
         descriptions: [
             {
-                label: "Nhận và làm bài thi hoặc bài tập được giao.",
+                label: "I-test sẽ đưa ra danh sách các tính năng để bạn có thể " +
+                    "tự do lựa chọn theo nhu cầu mà mình mong muốn sử dụng.",
             },
             {
-                label: "Xem điểm và đối chiếu kết quả sau khi làm bài.",
-            },
-            {
-                label: "Quản lý bài thi/bài tập đã làm",
-                option: "Nhận và làm bài thi hoặc bài tập được giao.",
+                label: "Sau đó, I-test sẽ liên hệ để tư vấn cho bạn.",
             },
         ]
     },

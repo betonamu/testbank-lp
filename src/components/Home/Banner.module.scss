@@ -1,45 +1,62 @@
 @import "../../assets/scss/global";
 
+.background {
+    @include largeScreen {
+        background: url("/images/home/banner/bg-blur.png") no-repeat padding-box;
+    }
+}
+
 .banner-wrapper {
     display: flex;
     width: 100%;
     align-items: end;
     box-sizing: border-box;
-    background: url("/images/home/banner/bg-blur.png") no-repeat padding-box;
     flex-direction: column;
 
     @include largeScreen {
-        height: 720px;
+        height: 550px;
         flex-direction: row;
     }
 
     .banner-left {
         display: flex;
-        height: 100%;
         width: 100%;
-        margin-top: auto;
         flex-direction: column;
         justify-content: end;
         row-gap: 20px;
+        order: 1;
         @include largeScreen {
+            order: 0;
             width: 50%;
         }
 
         .title {
-            font-size: 48px;
-            line-height: 78px;
+            font-size: 24px;
+            line-height: 36px;
+            @include largeScreen {
+                font-size: 48px;
+                line-height: 78px;
+            }
 
             span {
-                padding: 0 $md-padding;
+                padding: 0 12px;
+                color: $primary-color;
                 background: rgba(255, 153, 0, 0.1);
                 border: 2px solid #F76E48;
-                border-radius: 24px;
+                border-radius: 12px;
+                @include largeScreen {
+                    border-radius: 24px;
+                    padding: 0 $md-padding;
+                }
             }
         }
 
         .description {
-            width: 80%;
+            width: 100%;
             line-height: 24px;
+            @include largeScreen {
+                width: 80%;
+            }
 
             span {
                 color: $primary-color;
@@ -56,9 +73,11 @@
         width: 100%;
         display: flex;
         justify-content: center;
+        order: 0;
 
         @include largeScreen {
             width: 50%;
+            order: 1;
         }
 
         img {

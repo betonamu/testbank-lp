@@ -1,0 +1,120 @@
+@import "../../assets/scss/global";
+
+.background {
+    @include largeScreen {
+        background: url("/images/home/customer-service/bg-image.png") no-repeat padding-box;
+    }
+}
+
+.customer-review-wrapper {
+    box-sizing: border-box;
+    padding: 0;
+    height: 600px;
+    @include largeScreen {
+        height: 700px;
+        padding: 0 100px;
+    }
+
+    h2 {
+        width: fit-content;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 20px;
+        line-height: 30px;
+
+
+        @include largeScreen {
+            font-size: 40px;
+            line-height: 60px;
+
+
+        }
+    }
+
+    .content {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: #FFFFFF;
+        box-shadow: 0 20px 60px rgba(248, 76, 38, 0.15);
+        border-radius: 24px;
+        margin-top: 30px;
+        box-sizing: border-box;
+        padding: 24px 12px;
+
+        @include largeScreen {
+            margin-top: 100px;
+            box-shadow: initial;
+            border-radius: initial;
+            background: initial;
+        }
+
+        .review-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 370px;
+            height: 420px;
+            margin-bottom: initial;
+
+            @include largeScreen {
+                height: 370px;
+                margin-bottom: -80px;
+            }
+
+            > p {
+                margin: 38px 0;
+            }
+
+            .current-avatar {
+                .name {
+                    margin-top: 10px;
+                    font-weight: 700;
+                    line-height: 24px;
+                }
+            }
+        }
+
+        .review1 {
+            position: absolute;
+            top: 0;
+            left: 10%;
+        }
+
+        .review2 {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .review3 {
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+        }
+
+        .review4 {
+            position: absolute;
+            top: 0;
+            right: 10%;
+        }
+
+        .review5 {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+
+        .review6 {
+            position: absolute;
+            bottom: 0;
+            right: 10%;
+        }
+
+    }
+}

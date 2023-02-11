@@ -2,37 +2,44 @@ import React from "react";
 import classNames from "classnames";
 
 import Button from "@/components/Common/Controls/Button";
+import {Desktop, Mobile} from "@/components/Common/Media";
 
 import Logo from "../../../assets/icons/logo.svg";
-import Tick from "../../../assets/icons/tick.svg";
+import LogoMobile from "../../../assets/icons/logo-mobile.svg";
+import MenuIcon from "../../../assets/icons/menu.svg";
 
 import styles from "./Header.module.scss";
 
 const Header = () => {
     return (
-        <header className={classNames(styles.header, "container")}>
-            <div className={styles.leftSide}>
-                <Logo/>
-                <a className={styles.navItem}>Giới thiệu</a>
-                <a className={styles.navItem}>Bảng giá</a>
-                <a className={styles.navItem}>Tính năng</a>
-                <a className={styles.navItem}>Liên hệ</a>
-            </div>
-            <div className={styles.rightSide}>
-                <select>
-                    <option>123</option>
-                    <option>123</option>
-                </select>
-                <Button className={styles.btnLogin}
-                        type="outline">
-                    Đăng nhập
-                </Button>
-                <Button className={styles.btnTrial}
-                        type="primary"
-                        icon={<Tick/>}>
-                    Dùng thử miễn phí
-                </Button>
-            </div>
+        <header className={classNames(styles.header, 'container')}>
+            <Desktop>
+                <div className={styles.leftSide}>
+                    <Logo/>
+                    <a className={styles.navItem}>Giới thiệu</a>
+                    <a className={styles.navItem}>Bảng giá</a>
+                    <a className={styles.navItem}>Tính năng</a>
+                    <a className={styles.navItem}>Liên hệ</a>
+                </div>
+                <div className={styles.rightSide}>
+                    <select>
+                        <option>123</option>
+                        <option>123</option>
+                    </select>
+                    <Button className={styles.btnLogin}
+                            type="outline">
+                        Đăng nhập
+                    </Button>
+                    <Button className={styles.btnTrial}
+                            type="primary">
+                        Dùng thử miễn phí
+                    </Button>
+                </div>
+            </Desktop>
+            <Mobile>
+                <LogoMobile/>
+                <MenuIcon/>
+            </Mobile>
         </header>
     )
 }

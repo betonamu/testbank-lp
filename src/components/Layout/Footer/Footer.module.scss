@@ -5,17 +5,126 @@
 
     .footer-top {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
+        margin: 15px 0 50px;
+
+        @include largeScreen {
+            flex-direction: row;
+        }
 
         .left-side {
             img {
                 width: 164px;
                 height: auto;
             }
+
+            h3 {
+                margin: 25px 0;
+            }
+
+            p {
+                margin: 0 0 13px;
+
+                svg {
+                    margin-right: 10px;
+                }
+            }
         }
 
         .right-side {
+            font-weight: 700;
 
+            > p {
+                margin: 41px 0 16px;
+
+                @include largeScreen {
+                    margin-bottom: 32px;
+                }
+            }
+
+            @include largeScreen {
+                text-align: center;
+            }
+
+            .icon-wrapper {
+                display: flex;
+                column-gap: 12px;
+                @include largeScreen {
+                    column-gap: 20px;
+                }
+
+                .icon {
+                    display: flex;
+                    height: 50px;
+                    width: 50px;
+                    background: white;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    box-sizing: border-box;
+                    border: 1px solid #DFDFDF;
+                    cursor: pointer;
+                }
+
+                .facebook {
+                    background: #5891FF;
+
+                    svg {
+                        path {
+                            fill: white;
+                        }
+                    }
+
+                    @include largeScreen {
+                        background: initial;
+
+                        svg {
+                            path {
+                                fill: #5891FF;
+                            }
+                        }
+                        &:hover {
+                            background: #5891FF;
+
+                            svg {
+                                path {
+                                    fill: white;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .youtube {
+                    background: #FF3333;
+
+                    svg {
+                        path {
+                            fill: white;
+                        }
+                    }
+
+                    @include largeScreen {
+                        background: initial;
+
+                        svg {
+                            path {
+                                fill: #FF3333;
+                            }
+                        }
+                        &:hover {
+                            background: #FF3333;
+
+                            svg {
+                                path {
+                                    fill: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 

@@ -6,6 +6,19 @@ body {
     margin: 0;
 }
 
+button {
+    cursor: pointer;
+}
+
+input, button {
+    font-family: $font-family;
+    outline: none;
+}
+
+p, h2, h3 {
+    margin: 0;
+}
+
 .container {
     max-width: 1280px;
     width: 100% !important;
@@ -14,19 +27,8 @@ body {
     box-sizing: border-box;
 
     @include largeScreen {
-        padding: 3rem;
-        margin: 0 auto;
+        padding: 1rem 3rem;
     }
 }
 
-button {
-    cursor: pointer;
-}
 
-input, button {
-    font-family: $font-family;
-}
-
-p{
-    margin: 0;
-}
