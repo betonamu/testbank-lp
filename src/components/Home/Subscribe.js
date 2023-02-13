@@ -13,7 +13,7 @@ import Container from "@/components/Common/Container";
 const TABS = {
     STUDENT: 'student',
     TEACHER: 'teacher',
-    PARENTS: 'parents',
+    PARENTS: 'parent',
     SCHOOL: 'school'
 }
 const Subscribe = () => {
@@ -41,6 +41,7 @@ const Subscribe = () => {
     const switchTab = (tabName) => {
         setActiveTab(tabName);
     }
+    console.log(studentPricings[activeTab])
 
     const onSelectPlan = (planIndex) => {
         if (selectedPlan === planIndex)
@@ -74,8 +75,8 @@ const Subscribe = () => {
                             }
                         </div>
                         <div className={styles.tabContent}>
-                            {studentPricings.map((item, index) => (
-                                <div key={item.price} className={classNames(styles.pricingItem, {
+                            {studentPricings[activeTab].map((item, index) => (
+                                <div key={`${activeTab + index}`} className={classNames(styles.pricingItem, {
                                     [styles.activePlan]: selectedPlan === index
                                 })}>
                                     <div>
@@ -105,6 +106,13 @@ const Subscribe = () => {
                                 </div>
                             ))}
                         </div>
+                        {
+                            selectedPlan !== -1 &&
+                            <div className={styles.trial}>
+                                <input placeholder="Nhập email hoặc SĐT để dùng thử miễn phí"/>
+                                <Button type="primary">Dùng thử ngay</Button>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div className={styles.bottom}>

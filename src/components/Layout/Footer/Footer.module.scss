@@ -132,10 +132,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 65px;
         background: #FFFFFF;
         border-top: 1px solid #B8B8CC;
         color: $grey;
         font-size: 13px;
+        height: 32px;
+        padding: 24px 0;
+        text-align: center;
+
+        @include largeScreen {
+            height: 65px;
+            padding: 0;
+        }
     }
 }

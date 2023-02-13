@@ -8,11 +8,11 @@ const withReactSvg = require('next-react-svg')(nextReactSvgConfig);
 
 const nextConfig = {
     reactStrictMode: true,
-    assetPrefix: './',
-    images: {
-        loader: "imgix",
-        path: './nguvl/'
-    },
+    // assetPrefix: './',
+    // images: {
+    //     loader: "imgix",
+    //     path: './nguvl/'
+    // },
     webpack: (config) => {
         const {rules} = config.module;
         // Find the array of "style rules" in the webpack config.
