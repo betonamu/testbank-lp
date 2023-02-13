@@ -7,25 +7,49 @@ import {Desktop, Mobile} from "@/components/Common/Media";
 import Logo from "../../../assets/icons/logo.svg";
 import LogoMobile from "../../../assets/icons/logo-mobile.svg";
 import MenuIcon from "../../../assets/icons/menu.svg";
+import VietNamFlag from "../../../assets/icons/vn-flag.svg";
+import Chevron from "../../../assets/icons/chevron-down.svg";
 
 import styles from "./Header.module.scss";
+import useDevices from "@/hooks/useDevices";
 
 const Header = () => {
+    const {isDesktop} = useDevices();
+
+    const scrollToElement = (elementId) => {
+        const element = document.getElementById(elementId);
+        // const scrollPosition = element.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+        element.style.scrollMargin = isDesktop ? '92px' : '64px';
+        element.scrollIntoView({behavior: 'smooth'});
+    }
+
     return (
         <header className={classNames(styles.header, 'container')}>
             <Desktop>
                 <div className={styles.leftSide}>
                     <Logo/>
-                    <a className={styles.navItem}>Giới thiệu</a>
-                    <a className={styles.navItem}>Bảng giá</a>
-                    <a className={styles.navItem}>Tính năng</a>
-                    <a className={styles.navItem}>Liên hệ</a>
+                    <a className={styles.navItem}
+                       onClick={() => scrollToElement('referral')}>
+                        Giới thiệu
+                    </a>
+                    <a className={styles.navItem}
+                       onClick={() => scrollToElement('pricing')}>
+                        Bảng giá
+                    </a>
+                    <a className={styles.navItem}
+                       onClick={() => scrollToElement('feature')}>
+                        Tính năng
+                    </a>
+                    <a className={styles.navItem}
+                       onClick={() => scrollToElement('contact')}>
+                        Liên hệ
+                    </a>
                 </div>
                 <div className={styles.rightSide}>
-                    <select>
-                        <option>123</option>
-                        <option>123</option>
-                    </select>
+                    <div className={styles.languageGr}>
+                        <VietNamFlag/>
+                        <Chevron/>
+                    </div>
                     <Button className={styles.btnLogin}
                             type="outline">
                         Đăng nhập

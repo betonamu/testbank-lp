@@ -1,12 +1,12 @@
 @import "../../assets/scss/global";
 
 .background {
-    background-image: url("../../../public/images/home/subscribe/linear-base-mobile.png");
+    background-image: url("/images/home/subscribe/linear-base-mobile.png");
     background-repeat: no-repeat;
     background-position: left bottom;
 
     @include largeScreen {
-        background-image: url("/images/home/subscribe/bg-subsribe.png"), url("../../../public/images/home/subscribe/linear-base.png");
+        background-image: url("/images/home/subscribe/bg-subsribe.png"), url("/public/images/home/subscribe/linear-base.png");
         background-position: left top 15%, left bottom;
 
     }

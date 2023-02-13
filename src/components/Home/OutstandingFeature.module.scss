@@ -27,10 +27,41 @@
 
     background: url("/images/home/outstanding-feature/bg-feature.png") no-repeat left -67% bottom 30%;
 
+    [class~="slider-control-topleft"] {
+        margin-top: -20px;
+        padding-left: 1.5rem;
+    }
+
+    [class~="slider-frame"] {
+        width: 100vw !important;
+    }
+
+    .dot-wrapper {
+        display: flex;
+        column-gap: 5px;
+
+        .dot-item {
+            height: 8px;
+            width: 8px;
+            background: red;
+            border-radius: 100%;
+            box-sizing: border-box;
+        }
+
+        .active {
+            width: 40px;
+            border-radius: 4px;
+        }
+    }
 
     .feature-tabs {
         display: flex;
         width: 100%;
+        margin-top: 40px;
+
+        @include largeScreen {
+            margin-top: initial;
+        }
 
         .tabs {
             display: flex;
@@ -108,7 +139,6 @@
                 width: 100%;
                 height: 100%;
                 align-items: center;
-
                 @include largeScreen {
                     width: 80%;
                 }
@@ -137,7 +167,6 @@
                         box-shadow: 21px 21px 59px rgba(248, 76, 38, 0.1);
                         border-radius: 24px;
                         font-size: 16px;
-                        flex-shrink: 0;
                         width: 100%;
                         margin-bottom: 20px;
                         @include largeScreen {
@@ -158,6 +187,11 @@
                             border-radius: 16px;
                             margin-right: 16px;
 
+                            @include largeScreen {
+                                width: 56px;
+                                margin-right: 16px;
+                            }
+
                             p {
                                 display: flex;
                                 justify-content: center;
@@ -173,203 +207,202 @@
                             width: 70%;
                         }
                     }
+                }
 
-                    .number1 {
+                .number1 {
+                    @include largeScreen {
+                        top: -65px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        position: absolute;
+                    }
+                }
 
-                        @include largeScreen {
-                            top: -65px;
-                            left: 50%;
-                            transform: translateX(-50%);
-                            position: absolute;
-                        }
+                .number2 {
+                    @include largeScreen {
+                        top: 50%;
+                        left: -30px;
+                        transform: translateY(-50%);
+                        position: absolute;
                     }
 
-                    .number2 {
-                        @include largeScreen {
-                            top: 50%;
-                            left: -30px;
-                            transform: translateY(-50%);
-                            position: absolute;
-                        }
+                }
 
+                .number3 {
+                    @include largeScreen {
+                        transform: translateX(-50%);
+                        bottom: 0;
+                        left: 50%;
+                        position: absolute;
                     }
+                }
 
-                    .number3 {
-                        @include largeScreen {
-                            transform: translateX(-50%);
-                            bottom: 0;
-                            left: 50%;
-                            position: absolute;
-                        }
+                .number4 {
+                    @include largeScreen {
+                        right: -30px;
+                        transform: translateY(-50%);
+                        top: 50%;
+                        position: absolute;
                     }
+                }
 
-                    .number4 {
-                        @include largeScreen {
-                            right: -30px;
-                            transform: translateY(-50%);
-                            top: 50%;
-                            position: absolute;
-                        }
+                .number5 {
+                    @include largeScreen {
+                        top: -30px;
+                        left: 15%;
+                        position: absolute;
                     }
+                }
 
-                    .number5 {
-                        @include largeScreen {
-                            top: -30px;
-                            left: 15%;
-                            position: absolute;
-                        }
+                .number6 {
+                    @include largeScreen {
+                        left: -30px;
+                        top: 30%;
+                        position: absolute;
                     }
+                }
 
-                    .number6 {
-                        @include largeScreen {
-                            left: -30px;
-                            top: 30%;
-                            position: absolute;
-                        }
+                .number7 {
+                    @include largeScreen {
+                        bottom: 30px;
+                        left: 15%;
+                        position: absolute;
                     }
+                }
 
-                    .number7 {
-                        @include largeScreen {
-                            bottom: 30px;
-                            left: 15%;
-                            position: absolute;
-                        }
+                .number8 {
+                    @include largeScreen {
+                        bottom: 15px;
+                        right: 5%;
+                        position: absolute;
                     }
+                }
 
-                    .number8 {
-                        @include largeScreen {
-                            bottom: 15px;
-                            right: 5%;
-                            position: absolute;
-                        }
+                .number9 {
+                    @include largeScreen {
+                        position: absolute;
+                        right: -30px;
+                        top: 20%;
                     }
+                }
 
-                    .number9 {
-                        @include largeScreen {
-                            position: absolute;
-                            right: -30px;
-                            top: 20%;
-                        }
+                .number10 {
+                    @include largeScreen {
+                        top: -30px;
+                        left: 10%;
+                        position: absolute;
                     }
+                }
 
-                    .number10 {
-                        @include largeScreen {
-                            top: -30px;
-                            left: 10%;
-                            position: absolute;
-                        }
+                .number11 {
+                    @include largeScreen {
+                        left: -30px;
+                        bottom: 25%;
+                        position: absolute;
                     }
+                }
 
-                    .number11 {
-                        @include largeScreen {
-                            left: -30px;
-                            bottom: 25%;
-                            position: absolute;
-                        }
+                .number12 {
+                    @include largeScreen {
+                        bottom: 25px;
+                        right: 10%;
+                        position: absolute;
                     }
+                }
 
-                    .number12 {
-                        @include largeScreen {
-                            bottom: 25px;
-                            right: 10%;
-                            position: absolute;
-                        }
+                .number13 {
+                    @include largeScreen {
+                        position: absolute;
+                        right: -30px;
+                        top: 0;
                     }
+                }
 
-                    .number13 {
-                        @include largeScreen {
-                            position: absolute;
-                            right: -30px;
-                            top: 0;
-                        }
+                .number14 {
+                    @include largeScreen {
+                        top: -30px;
+                        left: 10%;
+                        position: absolute;
                     }
+                }
 
-                    .number14 {
-                        @include largeScreen {
-                            top: -30px;
-                            left: 10%;
-                            position: absolute;
-                        }
+                .number15 {
+                    @include largeScreen {
+                        left: -30px;
+                        bottom: 40%;
+                        position: absolute;
                     }
+                }
 
-                    .number15 {
-                        @include largeScreen {
-                            left: -30px;
-                            bottom: 40%;
-                            position: absolute;
-                        }
+                .number16 {
+                    @include largeScreen {
+                        bottom: -30px;
+                        left: 15%;
+                        position: absolute;
                     }
+                }
 
-                    .number16 {
-                        @include largeScreen {
-                            bottom: -30px;
-                            left: 15%;
-                            position: absolute;
-                        }
+                .number17 {
+                    @include largeScreen {
+                        position: absolute;
+                        right: -30px;
+                        bottom: -30px;
                     }
+                }
 
-                    .number17 {
-                        @include largeScreen {
-                            position: absolute;
-                            right: -30px;
-                            bottom: -30px;
-                        }
+                .number18 {
+                    @include largeScreen {
+                        position: absolute;
+                        right: -30px;
+                        top: -30px;
                     }
+                }
 
-                    .number18 {
-                        @include largeScreen {
-                            position: absolute;
-                            right: -30px;
-                            top: -30px;
-                        }
+                .number19 {
+                    @include largeScreen {
+                        top: -30px;
+                        left: 10%;
+                        position: absolute;
                     }
+                }
 
-                    .number19 {
-                        @include largeScreen {
-                            top: -30px;
-                            left: 10%;
-                            position: absolute;
-                        }
+                .number20 {
+                    @include largeScreen {
+                        left: -30px;
+                        bottom: 50%;
+                        position: absolute;
                     }
+                }
 
-                    .number20 {
-                        @include largeScreen {
-                            left: -30px;
-                            bottom: 50%;
-                            position: absolute;
-                        }
+                .number21 {
+                    @include largeScreen {
+                        bottom: 0;
+                        left: 10%;
+                        position: absolute;
                     }
+                }
 
-                    .number21 {
-                        @include largeScreen {
-                            bottom: 0;
-                            left: 10%;
-                            position: absolute;
-                        }
+                .number22 {
+                    @include largeScreen {
+                        position: absolute;
+                        right: 15%;
+                        bottom: 0;
                     }
+                }
 
-                    .number22 {
-                        @include largeScreen {
-                            position: absolute;
-                            right: 15%;
-                            bottom: 0;
-                        }
+                .number23 {
+                    @include largeScreen {
+                        position: absolute;
+                        right: -30px;
+                        top: 45%;
                     }
+                }
 
-                    .number23 {
-                        @include largeScreen {
-                            position: absolute;
-                            right: -30px;
-                            top: 45%;
-                        }
-                    }
-
-                    .number24 {
-                        @include largeScreen {
-                            position: absolute;
-                            right: 15%;
-                            top: -30px;
-                        }
+                .number24 {
+                    @include largeScreen {
+                        position: absolute;
+                        right: 15%;
+                        top: -30px;
                     }
                 }
             }

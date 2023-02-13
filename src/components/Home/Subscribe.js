@@ -42,9 +42,16 @@ const Subscribe = () => {
         setActiveTab(tabName);
     }
 
+    const onSelectPlan = (planIndex) => {
+        if (selectedPlan === planIndex)
+            setSelectedPlan(-1);
+        else
+            setSelectedPlan(planIndex);
+    }
+
     return (
         <Container className={styles.background}>
-            <div className={styles.subscribeWrapper}>
+            <div className={styles.subscribeWrapper} id={"pricing"}>
                 <div className={styles.top}>
                     <h3>Bạn đã sẵn sàng</h3>
 
@@ -76,8 +83,8 @@ const Subscribe = () => {
                                         <h2>{item.price}</h2>
 
                                         <div className={styles.descriptions}>
-                                            {item.descriptions.map(des => (
-                                                <div className={styles.desItem}>
+                                            {item.descriptions.map((des, index) => (
+                                                <div key={index} className={styles.desItem}>
                                                     <span><TickIcon/></span>
                                                     <div>
                                                         <p>{des.label}</p>
@@ -91,7 +98,7 @@ const Subscribe = () => {
                                     <Button type="outline"
                                             className={styles.selectBtn}
                                             icon={selectedPlan === index && <TickOrangeIcon/>}
-                                            onClick={() => setSelectedPlan(index)}
+                                            onClick={() => onSelectPlan(index)}
                                             clicked={selectedPlan === index}>
                                         {selectedPlan !== index ? 'Chọn' : 'Đang chọn'}
                                     </Button>

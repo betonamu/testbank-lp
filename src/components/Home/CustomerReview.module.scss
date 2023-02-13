@@ -9,10 +9,28 @@
 .customer-review-wrapper {
     box-sizing: border-box;
     padding: 0;
-    height: 600px;
+    height: 640px;
     @include largeScreen {
         height: 700px;
         padding: 0 100px;
+    }
+
+    .dot-wrapper {
+        display: flex;
+        column-gap: 5px;
+
+        .dot-item {
+            height: 8px;
+            width: 8px;
+            background: red;
+            border-radius: 100%;
+            box-sizing: border-box;
+        }
+
+        .active {
+            width: 40px;
+            border-radius: 4px;
+        }
     }
 
     h2 {
@@ -26,8 +44,6 @@
         @include largeScreen {
             font-size: 40px;
             line-height: 60px;
-
-
         }
     }
 
@@ -43,9 +59,10 @@
         margin-top: 30px;
         box-sizing: border-box;
         padding: 24px 12px;
+        margin-bottom: 50px;
 
         @include largeScreen {
-            margin-top: 100px;
+            margin: 100px 0 0;
             box-shadow: initial;
             border-radius: initial;
             background: initial;
@@ -56,12 +73,13 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 370px;
             height: 420px;
+            width: 100%;
             margin-bottom: initial;
 
             @include largeScreen {
                 height: 370px;
+                width: 370px;
                 margin-bottom: -80px;
             }
 

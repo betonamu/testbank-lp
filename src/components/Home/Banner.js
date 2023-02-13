@@ -13,7 +13,7 @@ const Banner = () => {
     }
     return (
         <Container className={styles.background}>
-            <div className={classNames(styles.bannerWrapper)}>
+            <div className={classNames(styles.bannerWrapper)} id={"referral"}>
                 <div className={styles.bannerLeft}>
                     <h1 className={styles.title}>
                         Giải pháp quản lý<br/>
