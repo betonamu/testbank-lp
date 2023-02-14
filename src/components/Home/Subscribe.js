@@ -9,6 +9,8 @@ import TickOrangeIcon from "../../assets/icons/tick-orange.svg";
 
 import styles from "./Subscribe.module.scss";
 import Container from "@/components/Common/Container";
+import Select from "@/components/Common/Controls/Select";
+import {Desktop, Mobile} from "@/components/Common/Media";
 
 const TABS = {
     STUDENT: 'student',
@@ -19,20 +21,20 @@ const TABS = {
 const Subscribe = () => {
     const tabItems = [
         {
-            tabName: 'Học viên',
-            tabValue: TABS.STUDENT
+            label: 'Học viên',
+            value: TABS.STUDENT
         },
         {
-            tabName: 'Phụ huynh',
-            tabValue: TABS.PARENTS
+            label: 'Phụ huynh',
+            value: TABS.PARENTS
         },
         {
-            tabName: 'Giáo viên',
-            tabValue: TABS.TEACHER
+            label: 'Giáo viên',
+            value: TABS.TEACHER
         },
         {
-            tabName: 'Nhà trường',
-            tabValue: TABS.SCHOOL
+            label: 'Nhà trường',
+            value: TABS.SCHOOL
         },
     ];
 
@@ -41,7 +43,6 @@ const Subscribe = () => {
     const switchTab = (tabName) => {
         setActiveTab(tabName);
     }
-    console.log(studentPricings[activeTab])
 
     const onSelectPlan = (planIndex) => {
         if (selectedPlan === planIndex)
@@ -59,21 +60,30 @@ const Subscribe = () => {
                     <h2>
                         Trải nghiệm i-test<br/> ngay hôm nay?
                     </h2>
-                    <div className={styles.tabs}>
-                        <div className={styles.tabItems}>
-                            {
-                                tabItems.map(item => (
-                                    <button key={item.tabValue} className={
-                                        classNames({
-                                            [styles.active]: activeTab === item.tabValue
-                                        })}
-                                            onClick={() => switchTab(item.tabValue)}>
-
-                                        {item.tabName}
-                                    </button>
-                                ))
-                            }
+                    <Mobile>
+                        <div style={{display: 'flex', justifyContent: 'flex-start'}}>
+                            <Select options={tabItems}
+                                    defaultValue={tabItems[0]}
+                                    onChange={(e) => switchTab(e.value)}
+                                    className={styles.dropdown}/>
                         </div>
+                    </Mobile>
+                    <div className={styles.tabs}>
+                        <Desktop>
+                            <div className={styles.tabItems}>
+                                {
+                                    tabItems.map(item => (
+                                        <button key={item.value} className={
+                                            classNames({
+                                                [styles.active]: activeTab === item.value
+                                            })}
+                                                onClick={() => switchTab(item.value)}>
+                                            {item.label}
+                                        </button>
+                                    ))
+                                }
+                            </div>
+                        </Desktop>
                         <div className={styles.tabContent}>
                             {studentPricings[activeTab].map((item, index) => (
                                 <div key={`${activeTab + index}`} className={classNames(styles.pricingItem, {

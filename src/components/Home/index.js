@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import Banner from "@/components/Home/Banner";
 import Subscribe from "@/components/Home/Subscribe";
@@ -10,6 +10,7 @@ import CustomerReview from "@/components/Home/CustomerReview";
 import CallIcon from "../../assets/icons/call.svg";
 
 import styles from "./Home.module.scss";
+import Menu from "@/components/Layout/Header/Menu";
 
 export default function Home() {
     return (
@@ -60,6 +61,9 @@ export default function Home() {
             <Desktop>
                 <SignupTrial/>
             </Desktop>
+
+
+            <Menu/>
         </div>
     )
 }
