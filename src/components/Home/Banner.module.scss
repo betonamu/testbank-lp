@@ -12,10 +12,12 @@
     align-items: end;
     box-sizing: border-box;
     flex-direction: column;
+    margin-top: 64px;
 
     @include largeScreen {
         height: 550px;
         flex-direction: row;
+        margin-top: 90px;
     }
 
     .banner-left {

@@ -14,7 +14,7 @@ const Footer = () => {
             <div className={styles.footerTop}>
                 <div className={styles.leftSide}>
                     <img src={"/images/layout/footer-logo.png"} alt=""/>
-                    <h3>CÔNG TY TNHH EDUCATION SOLUTION VIỆT NAM</h3>
+                    <h3>CÔNG TY TNHH EDUCATION SOFTWARE VIỆT NAM</h3>
                     <p><LocationIcon/>148-150 Nguyễn Đình Chính, Phường 8,<br/> Quận Phú Nhuận, Thành phố Hồ Chí Minh.
                     </p>
                     <p><CallIcon/>(+84) 28 3845 6936</p>

@@ -1,7 +1,13 @@
 @import "../../../assets/scss/global";
 
 .footer-wrapper {
-    margin-top: 80px;
+    background: #383D48;
+    color: white;
+    margin-top: -80px !important;
+
+    @include largeScreen{
+        margin-top: 80px !important;
+    }
 
     .footer-top {
         display: flex;
@@ -68,25 +74,17 @@
                 }
 
                 .facebook {
-                    background: #5891FF;
+                    background: white;
 
                     svg {
                         path {
-                            fill: white;
+                            fill: #5891FF;
                         }
                     }
 
                     @include largeScreen {
-                        background: initial;
-
-                        svg {
-                            path {
-                                fill: #5891FF;
-                            }
-                        }
                         &:hover {
                             background: #5891FF;
-
                             svg {
                                 path {
                                     fill: white;
@@ -97,22 +95,15 @@
                 }
 
                 .youtube {
-                    background: #FF3333;
+                    background: white;
 
                     svg {
                         path {
-                            fill: white;
+                            fill: #FF3333;
                         }
                     }
 
                     @include largeScreen {
-                        background: initial;
-
-                        svg {
-                            path {
-                                fill: #FF3333;
-                            }
-                        }
                         &:hover {
                             background: #FF3333;
 
@@ -132,7 +123,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #FFFFFF;
         border-top: 1px solid #B8B8CC;
         color: $grey;
         font-size: 13px;

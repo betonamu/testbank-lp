@@ -5,6 +5,10 @@
     flex-direction: column;
     align-items: center;
 
+    @include largeScreen{
+        margin-top: -100px;
+    }
+
     h3 {
         font-size: 32px;
         text-align: center;
