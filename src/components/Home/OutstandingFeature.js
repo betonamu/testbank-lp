@@ -95,7 +95,7 @@ const OutstandingFeature = () => {
                                         <span><p>1</p></span>
                                         <p className={styles.description}>Tổng hợp số liệu trực quan</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number2)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number4)}>
                                         <span><p>2</p></span>
                                         <p className={styles.description}>Ngân hàng đề thi tiêu chuẩn, đa dạng</p>
                                     </div>
@@ -103,7 +103,7 @@ const OutstandingFeature = () => {
                                         <span><p>3</p></span>
                                         <p className={styles.description}>Giao diện thân thiện</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number4)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number2)}>
                                         <span><p>4</p></span>
                                         <p className={styles.description}>Quản lý lịch thi, <br/>bài thi dễ dàng</p>
                                     </div>
@@ -117,19 +117,19 @@ const OutstandingFeature = () => {
                                         <span><p>1</p></span>
                                         <p className={styles.description}>Hệ thống câu hỏi đa dạng, độc đáo</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number6)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number9)}>
                                         <span><p>2</p></span>
                                         <p className={styles.description}>Phân loại đề thi theo nhiều cấp độ</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number7)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number8)}>
                                         <span><p>3</p></span>
                                         <p className={styles.description}>Luyện tập với nhiều bài đa dạng</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number8)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number7)}>
                                         <span><p>4</p></span>
                                         <p className={styles.description}>Thoả sức làm bài thi thử</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number9)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number6)}>
                                         <span><p>5</p></span>
                                         <p className={styles.description}>Có kết quả ngay sau khi hoàn thành bài thi</p>
                                     </div>
@@ -142,7 +142,7 @@ const OutstandingFeature = () => {
                                         <span><p>1</p></span>
                                         <p className={styles.description}>Theo dõi tình trạng học tập của con</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number11)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number13)}>
                                         <span><p>2</p></span>
                                         <p className={styles.description}>Biết được lớp học con đang tham gia</p>
                                     </div>
@@ -150,7 +150,7 @@ const OutstandingFeature = () => {
                                         <span><p>3</p></span>
                                         <p className={styles.description}>Nhận thông báo về bài thi của con</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number13)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number11)}>
                                         <span><p>4</p></span>
                                         <p className={styles.description}>Nắm được lịch thi của con</p>
                                     </div>
@@ -163,21 +163,21 @@ const OutstandingFeature = () => {
                                         <span><p>1</p></span>
                                         <p className={styles.description}>Quản lý Lịch thi & đề thi rõ ràng</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number15)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number18)}>
                                         <span><p>2</p></span>
                                         <p className={styles.description}>Cấu trúc đề thi đa dạng</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number16)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number17)}>
                                         <span><p>3</p></span>
                                         <p className={styles.description}>Tự thiết lập đề thi hoặc sử dụng mẫu từ
                                             TestBank</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number17)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number16)}>
                                         <span><p>4</p></span>
                                         <p className={styles.description}>Dễ dàng quản lý lớp học & học viên của
                                             mình</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number18)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number15)}>
                                         <span><p>5</p></span>
                                         <p className={styles.description}>Nắm được toàn bộ tình trạng học tập của học
                                             viên</p>
@@ -192,19 +192,19 @@ const OutstandingFeature = () => {
                                         <p className={styles.description}>Quản lý lớp học, giáo viên & học sinh chặt
                                             chẽ</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number20)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number23)}>
                                         <span><p>2</p></span>
                                         <p className={styles.description}>Quản lý toàn bộ đề thi của trường</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number21)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number22)}>
                                         <span><p>3</p></span>
                                         <p className={styles.description}>Nhận đóng góp đề thi từ giáo viên</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number22)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number21)}>
                                         <span><p>4</p></span>
                                         <p className={styles.description}>Báo cáo quản lý trực quan, đa đạng</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number23)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number20)}>
                                         <span><p>5</p></span>
                                         <p className={styles.description}>Nắm được toàn bộ tình trạng học tập của học
                                             viên</p>
@@ -226,6 +226,7 @@ const OutstandingFeature = () => {
                     <div className={styles.tabs}>
                         <div className={styles.tabContent}>
                             <CustomCarousel
+                                autoPlay={5000}
                                 renderTopLeftControls={renderBottomControl}
                                 renderBottomCenterControls={null}
                                 renderCenterRightControls={null}
@@ -243,7 +244,7 @@ const OutstandingFeature = () => {
                                             <span><p>1</p></span>
                                             <p className={styles.description}>Tổng hợp số liệu trực quan</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number2)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number4)}>
                                             <span><p>2</p></span>
                                             <p className={styles.description}>Ngân hàng đề thi tiêu chuẩn, đa dạng</p>
                                         </div>
@@ -251,9 +252,9 @@ const OutstandingFeature = () => {
                                             <span><p>3</p></span>
                                             <p className={styles.description}>Giao diện thân thiện</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number4)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number2)}>
                                             <span><p>4</p></span>
-                                            <p className={styles.description}>Quản lý lịch thi, bài thi dễ dàng</p>
+                                            <p className={styles.description}>Quản lý lịch thi, <br/>bài thi dễ dàng</p>
                                         </div>
                                     </div>
                                 </div>
@@ -270,19 +271,19 @@ const OutstandingFeature = () => {
                                             <span><p>1</p></span>
                                             <p className={styles.description}>Hệ thống câu hỏi đa dạng, độc đáo</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number6)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number9)}>
                                             <span><p>2</p></span>
                                             <p className={styles.description}>Phân loại đề thi theo nhiều cấp độ</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number7)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number8)}>
                                             <span><p>3</p></span>
                                             <p className={styles.description}>Luyện tập với nhiều bài đa dạng</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number8)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number7)}>
                                             <span><p>4</p></span>
                                             <p className={styles.description}>Thoả sức làm bài thi thử</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number9)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number6)}>
                                             <span><p>5</p></span>
                                             <p className={styles.description}>Có kết quả ngay sau khi hoàn thành bài
                                                 thi</p>
@@ -302,7 +303,7 @@ const OutstandingFeature = () => {
                                             <span><p>1</p></span>
                                             <p className={styles.description}>Theo dõi tình trạng học tập của con</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number11)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number13)}>
                                             <span><p>2</p></span>
                                             <p className={styles.description}>Biết được lớp học con đang tham gia</p>
                                         </div>
@@ -310,7 +311,7 @@ const OutstandingFeature = () => {
                                             <span><p>3</p></span>
                                             <p className={styles.description}>Nhận thông báo về bài thi của con</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number13)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number11)}>
                                             <span><p>4</p></span>
                                             <p className={styles.description}>Nắm được lịch thi của con</p>
                                         </div>
@@ -329,28 +330,24 @@ const OutstandingFeature = () => {
                                             <span><p>1</p></span>
                                             <p className={styles.description}>Quản lý Lịch thi & đề thi rõ ràng</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number15)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number18)}>
                                             <span><p>2</p></span>
                                             <p className={styles.description}>Cấu trúc đề thi đa dạng</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number16)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number17)}>
                                             <span><p>3</p></span>
-                                            <p className={styles.description}>Tự thiết lập đề thi hoặc<br/> sử dụng mẫu
-                                                từ
+                                            <p className={styles.description}>Tự thiết lập đề thi hoặc sử dụng mẫu từ
                                                 TestBank</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number17)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number16)}>
                                             <span><p>4</p></span>
-                                            <p className={styles.description}>Dễ dàng quản lý lớp học &<br/> học viên
-                                                của
-                                                mình
-                                            </p>
+                                            <p className={styles.description}>Dễ dàng quản lý lớp học & học viên của
+                                                mình</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number18)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number15)}>
                                             <span><p>5</p></span>
-                                            <p className={styles.description}>Nắm được toàn bộ tình <br/> trạng học tập
-                                                của
-                                                học viên</p>
+                                            <p className={styles.description}>Nắm được toàn bộ tình trạng học tập của học
+                                                viên</p>
                                         </div>
                                     </div>
                                 </div>
@@ -368,22 +365,21 @@ const OutstandingFeature = () => {
                                             <p className={styles.description}>Quản lý lớp học, giáo viên & học sinh chặt
                                                 chẽ</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number20)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number23)}>
                                             <span><p>2</p></span>
                                             <p className={styles.description}>Quản lý toàn bộ đề thi của trường</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number21)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number22)}>
                                             <span><p>3</p></span>
                                             <p className={styles.description}>Nhận đóng góp đề thi từ giáo viên</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number22)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number21)}>
                                             <span><p>4</p></span>
                                             <p className={styles.description}>Báo cáo quản lý trực quan, đa đạng</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number23)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number20)}>
                                             <span><p>5</p></span>
-                                            <p className={styles.description}>Nắm được toàn bộ tình trạng học tập của
-                                                học
+                                            <p className={styles.description}>Nắm được toàn bộ tình trạng học tập của học
                                                 viên</p>
                                         </div>
                                         <div className={classNames(styles.descriptionGroup, styles.number24)}>

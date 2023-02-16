@@ -6,6 +6,10 @@
     color: white;
     margin-top: -80px !important;
 
+    [class="container"]{
+        padding: 1rem 3rem 0;
+    }
+
     @include largeScreen {
         margin-top: 80px !important;
     }
@@ -40,7 +44,12 @@
         }
 
         .right-side {
-            font-weight: 700;
+            @include largeScreen {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                font-weight: 700;
+            }
 
             > p {
                 margin: 41px 0 16px;
@@ -121,11 +130,15 @@
         }
     }
 
+    .separate {
+        border: 1px solid #8E91A0;
+        margin: 0 -100%;
+    }
+
     .footer-bottom {
         display: flex;
         align-items: center;
         justify-content: center;
-        border-top: 1px solid #B8B8CC;
         color: $grey;
         font-size: 13px;
         height: 32px;

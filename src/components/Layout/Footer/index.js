@@ -17,7 +17,8 @@ const Footer = () => {
                     <div className={styles.leftSide}>
                         <img src={"/images/layout/footer-logo.png"} alt=""/>
                         <h3>CÔNG TY TNHH EDUCATION SOFTWARE VIỆT NAM</h3>
-                        <p><LocationIcon/>148-150 Nguyễn Đình Chính, Phường 8,<br/> Quận Phú Nhuận, Thành phố Hồ Chí Minh.
+                        <p><LocationIcon/>148-150 Nguyễn Đình Chính, Phường 8,<br/> Quận Phú Nhuận, Thành phố Hồ Chí
+                            Minh.
                         </p>
                         <p><CallIcon/>(+84) 28 3845 6936</p>
                         <p><MailIcon/>info@dtp-education.com</p>
@@ -34,6 +35,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+                <div className={styles.separate}/>
                 <div className={styles.footerBottom}>
                     Copyright (c) EDUCATION SOLUTIONS VIET NAM.,LTD. All Rights Reserved
                 </div>

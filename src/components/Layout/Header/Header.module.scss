@@ -43,6 +43,10 @@
     .nav-item {
         padding: $sm-padding;
         cursor: pointer;
+
+        &:hover{
+            color: $primary-color;
+        }
     }
 
     .left-side {
