@@ -12,6 +12,7 @@ import Chevron from "../../../assets/icons/chevron-down.svg";
 
 import styles from "./Header.module.scss";
 import useDevices from "@/hooks/useDevices";
+import Container from "@/components/Common/Container";
 
 const Header = () => {
     const {isDesktop} = useDevices();
@@ -40,46 +41,48 @@ const Header = () => {
 
     return (
         <header className={classNames(styles.header)} ref={headerRef}>
-            <div className={classNames(styles.fixedHeader, 'container')}>
-                <Desktop>
-                    <div className={styles.leftSide}>
-                        <Logo/>
-                        <a className={styles.navItem}
-                           onClick={() => scrollToElement('referral')}>
-                            Giới thiệu
-                        </a>
-                        <a className={styles.navItem}
-                           onClick={() => scrollToElement('pricing')}>
-                            Bảng giá
-                        </a>
-                        <a className={styles.navItem}
-                           onClick={() => scrollToElement('feature')}>
-                            Tính năng
-                        </a>
-                        <a className={styles.navItem}
-                           onClick={() => scrollToElement('contact')}>
-                            Liên hệ
-                        </a>
-                    </div>
-                    <div className={styles.rightSide}>
-                        <div className={styles.languageGr}>
-                            <VietNamFlag/>
-                            <Chevron/>
+            <div className={classNames(styles.fixedHeader)}>
+                <Container>
+                    <Desktop>
+                        <div className={styles.leftSide}>
+                            <Logo/>
+                            <a className={styles.navItem}
+                               onClick={() => scrollToElement('referral')}>
+                                Giới thiệu
+                            </a>
+                            <a className={styles.navItem}
+                               onClick={() => scrollToElement('pricing')}>
+                                Bảng giá
+                            </a>
+                            <a className={styles.navItem}
+                               onClick={() => scrollToElement('feature')}>
+                                Tính năng
+                            </a>
+                            <a className={styles.navItem}
+                               onClick={() => scrollToElement('contact')}>
+                                Liên hệ
+                            </a>
                         </div>
-                        <Button className={styles.btnLogin}
-                                type="outline">
-                            Đăng nhập
-                        </Button>
-                        <Button className={styles.btnTrial}
-                                type="primary">
-                            Dùng thử miễn phí
-                        </Button>
-                    </div>
-                </Desktop>
-                <Mobile>
-                    <LogoMobile/>
-                    <MenuIcon height={26} width={26}/>
-                </Mobile>
+                        <div className={styles.rightSide}>
+                            <div className={styles.languageGr}>
+                                <VietNamFlag/>
+                                <Chevron/>
+                            </div>
+                            <Button className={styles.btnLogin}
+                                    type="outline">
+                                Đăng nhập
+                            </Button>
+                            <Button className={styles.btnTrial}
+                                    type="primary">
+                                Dùng thử miễn phí
+                            </Button>
+                        </div>
+                    </Desktop>
+                    <Mobile>
+                        <LogoMobile/>
+                        <MenuIcon height={26} width={26}/>
+                    </Mobile>
+                </Container>
             </div>
         </header>
     )

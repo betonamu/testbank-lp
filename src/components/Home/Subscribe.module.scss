@@ -3,10 +3,10 @@
 .background {
     background: url("/images/home/subscribe/linear-base-mobile.png") no-repeat left bottom;
     background-size: 100%;
-
     @include largeScreen {
-        background-image: url("/images/home/subscribe/bg-subsribe.png"), url("/images/home/subscribe/linear-base.png");
-        background-position: left top 15%, left bottom;
+        background-image: url("/images/home/subscribe/linear-base.png"), url("/images/home/subscribe/bg-subsribe-large.png");
+        background-position: center bottom, left top 15%;
+        background-size: initial;
     }
 }
 
@@ -119,7 +119,17 @@
                     .select-btn {
                         height: 56px;
                         width: 220px;
-                        margin-top: auto;
+                        margin: auto 0 10px;
+
+                    }
+
+                    .day-trial {
+                        margin: 0 auto;
+                        width: fit-content;
+                        font-weight: 500;
+                        font-size: 15px;
+                        line-height: 22px;
+                        color: #21C274;
                     }
 
                     .descriptions {
@@ -150,6 +160,12 @@
                                     color: #6DC27A;
 
                                 }
+                            }
+
+                            ul {
+                                font-size: 14px;
+                                padding-left: 30px;
+                                margin: -15px 0 0;
                             }
                         }
                     }

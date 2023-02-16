@@ -1,11 +1,12 @@
 @import "../../../assets/scss/global";
 
 .footer-wrapper {
+    width: 100%;
     background: #383D48;
     color: white;
     margin-top: -80px !important;
 
-    @include largeScreen{
+    @include largeScreen {
         margin-top: 80px !important;
     }
 
@@ -85,6 +86,7 @@
                     @include largeScreen {
                         &:hover {
                             background: #5891FF;
+
                             svg {
                                 path {
                                     fill: white;

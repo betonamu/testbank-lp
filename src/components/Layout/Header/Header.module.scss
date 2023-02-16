@@ -4,6 +4,11 @@
     position: relative;
     width: 100%;
 
+    [class="container"] {
+        display: flex;
+        justify-content: space-between;
+    }
+
     .fixed-header {
         display: flex;
         width: 100%;
@@ -19,9 +24,10 @@
 
     &[data-scroll='scroll-out'] {
         margin-bottom: 64px;
-        @include largeScreen{
+        @include largeScreen {
             margin-bottom: 90px;
         }
+
         .fixed-header {
             position: fixed;
             top: 0;

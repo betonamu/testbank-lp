@@ -32,7 +32,8 @@ export const studentPricings = {
                     label: "Có thể tải xuống lên đến 5 đề thi thử và thực hiện thi thử",
                     option: '(có thể tải thêm chỉ với ***** đ/đề)'
                 },
-            ]
+            ],
+            isTrial: true,
         },
         {
             label: "Gói nâng cao",
@@ -54,7 +55,8 @@ export const studentPricings = {
                 {
                     label: 'Không giới hạn số bài tập thực hành'
                 }
-            ]
+            ],
+            isTrial: true,
         },
         {
             label: "Gói tuỳ chỉnh",
@@ -164,7 +166,8 @@ export const studentPricings = {
                 {
                     label: 'Có thể tự thiết lập cấu trúc đề thi/bài tập theo nhu cầu'
                 }
-            ]
+            ],
+            isTrial: true,
         },
         {
             label: "Gói tuỳ chỉnh",
@@ -190,10 +193,12 @@ export const studentPricings = {
                     option: "(có thể tăng số lượng đề chỉ với ***** đ/đề)"
                 },
                 {
-                    label: "Quản lý lớp học, giáo viên & học sinh với số lượng giới hạn:\n" +
-                        "Lớp học: 999\n" +
-                        "Giáo viên: 999\n" +
-                        "Học sinh: 999",
+                    label: "Quản lý lớp học, giáo viên & học sinh với số lượng giới hạn:",
+                    lists: [
+                        "Lớp học: 999",
+                        "Giáo viên: 999",
+                        "Học sinh: 999"
+                    ]
                 },
             ]
         },
@@ -214,7 +219,8 @@ export const studentPricings = {
                 {
                     label: "Cho phép chỉnh sửa các đề thi mẫu đang sở hữu.",
                 },
-            ]
+            ],
+            isTrial: true,
         },
         {
             label: "Gói nâng cao",
@@ -238,7 +244,8 @@ export const studentPricings = {
                 {
                     label: 'Báo cáo thống kê'
                 }
-            ]
+            ],
+            isTrial: true,
         },
         {
             label: "Gói tuỳ chỉnh",

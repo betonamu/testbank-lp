@@ -1,6 +1,7 @@
 @import "../../assets/scss/global";
 
 .background {
+    width: 100%;
     @include largeScreen {
         background: url("/images/home/banner/bg-blur.png") no-repeat padding-box;
     }

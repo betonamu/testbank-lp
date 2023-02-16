@@ -52,8 +52,8 @@ const Subscribe = () => {
     }
 
     return (
-        <Container className={styles.background}>
-            <div className={styles.subscribeWrapper} id={"pricing"}>
+        <div className={classNames(styles.subscribeWrapper, styles.background)} id={"pricing"}>
+            <Container>
                 <div className={styles.top}>
                     <h3>Bạn đã sẵn sàng</h3>
 
@@ -100,19 +100,25 @@ const Subscribe = () => {
                                                     <div>
                                                         <p>{des.label}</p>
                                                         {des.option && <p className={styles.option}>{des.option}</p>}
+                                                        {des.lists?.length &&
+                                                        <ul>
+                                                            {des.lists.map((list, index) => (
+                                                                <li key={index}>{list}</li>
+                                                            ))}
+                                                        </ul>}
                                                     </div>
                                                 </div>
                                             ))}
                                         </div>
+                                        <Button type="outline"
+                                                className={styles.selectBtn}
+                                                icon={selectedPlan === index && <TickOrangeIcon/>}
+                                                onClick={() => onSelectPlan(index)}
+                                                clicked={selectedPlan === index}>
+                                            {selectedPlan !== index ? 'Chọn' : 'Đang chọn'}
+                                        </Button>
+                                        <p className={styles.dayTrial}>{item.isTrial && 'Miễn phí dùng thử: X ngày'}</p>
                                     </div>
-
-                                    <Button type="outline"
-                                            className={styles.selectBtn}
-                                            icon={selectedPlan === index && <TickOrangeIcon/>}
-                                            onClick={() => onSelectPlan(index)}
-                                            clicked={selectedPlan === index}>
-                                        {selectedPlan !== index ? 'Chọn' : 'Đang chọn'}
-                                    </Button>
                                 </div>
                             ))}
                         </div>
@@ -154,8 +160,8 @@ const Subscribe = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </Container>
+            </Container>
+        </div>
     )
 }
 

@@ -28,57 +28,19 @@ const CustomerReview = () => {
     }
 
     return (
-        <div className={classNames(styles.customerReviewWrapper, {
-            "container": !ssrMode && isDesktop
-        })}>
-            <h2>Khách hàng nói gì<br/> về chúng tôi</h2>
-            <Desktop>
-                <div className={styles.content}>
-                    <div className={styles.reviewContent}>
-                        <Icon/>
-                        <p>
-                            Hello Arthur! How are you?! So, I don't remember ecxactly, but I'm not sure that we saw
-                            this
-                            on that meting. I'm missing some ideais at this moment, but I'm not so sure about that.
-                            So,
-                            can you check this content, please?
-                        </p>
-                        <div className={styles.currentAvatar}>
-                            <img src={"/images/home/customer-service/image-avt.png"} alt={""}/>
-                            <p className={styles.name}>Jane Cooper</p>
-                            <p>President of Sales</p>
-                        </div>
-                    </div>
-                    <Desktop>
-                        <img className={styles.review1} src={"/images/home/customer-service/image-avt.png"}
-                             alt={""}/>
-                        <img className={styles.review2} src={"/images/home/customer-service/image-avt.png"}
-                             alt={""}/>
-                        <img className={styles.review3} src={"/images/home/customer-service/image-avt.png"}
-                             alt={""}/>
-                        <img className={styles.review4} src={"/images/home/customer-service/image-avt.png"}
-                             alt={""}/>
-                        <img className={styles.review5} src={"/images/home/customer-service/image-avt.png"}
-                             alt={""}/>
-                        <img className={styles.review6} src={"/images/home/customer-service/image-avt.png"}
-                             alt={""}/>
-                    </Desktop>
-                </div>
-            </Desktop>
-            <Mobile>
-                <CustomCarousel
-                    renderCenterLeftControls={null}
-                    renderCenterRightControls={null}
-                    renderBottomCenterControls={renderBottomCenterControl}>
+        <div className={styles.background}>
+            <div className={classNames(styles.customerReviewWrapper, {
+                "container": isDesktop
+            })}>
+                <h2>Khách hàng nói gì<br/> về chúng tôi</h2>
+                <Desktop>
                     <div className={styles.content}>
                         <div className={styles.reviewContent}>
                             <Icon/>
                             <p>
-                                Hello Arthur! How are you?! So, I don't remember ecxactly, but I'm not sure that we
-                                saw
+                                Hello Arthur! How are you?! So, I don't remember ecxactly, but I'm not sure that we saw
                                 this
-                                on that meting. I'm missing some ideais at this moment, but I'm not so sure about
-                                that.
+                                on that meting. I'm missing some ideais at this moment, but I'm not so sure about that.
                                 So,
                                 can you check this content, please?
                             </p>
@@ -88,48 +50,88 @@ const CustomerReview = () => {
                                 <p>President of Sales</p>
                             </div>
                         </div>
+                        <Desktop>
+                            <img className={styles.review1} src={"/images/home/customer-service/image-avt.png"}
+                                 alt={""}/>
+                            <img className={styles.review2} src={"/images/home/customer-service/image-avt1.png"}
+                                 alt={""}/>
+                            <img className={styles.review3} src={"/images/home/customer-service/image-avt.png"}
+                                 alt={""}/>
+                            <img className={styles.review4} src={"/images/home/customer-service/image-avt1.png"}
+                                 alt={""}/>
+                            <img className={styles.review5} src={"/images/home/customer-service/image-avt.png"}
+                                 alt={""}/>
+                            <img className={styles.review6} src={"/images/home/customer-service/image-avt1.png"}
+                                 alt={""}/>
+                        </Desktop>
+                    </div>
+                </Desktop>
+                <Mobile>
+                    <CustomCarousel
+                        renderCenterLeftControls={null}
+                        renderCenterRightControls={null}
+                        renderBottomCenterControls={renderBottomCenterControl}>
+                        <div className={styles.content}>
+                            <div className={styles.reviewContent}>
+                                <Icon/>
+                                <p>
+                                    Hello Arthur! How are you?! So, I don't remember ecxactly, but I'm not sure that we
+                                    saw
+                                    this
+                                    on that meting. I'm missing some ideais at this moment, but I'm not so sure about
+                                    that.
+                                    So,
+                                    can you check this content, please?
+                                </p>
+                                <div className={styles.currentAvatar}>
+                                    <img src={"/images/home/customer-service/image-avt.png"} alt={""}/>
+                                    <p className={styles.name}>Jane Cooper</p>
+                                    <p>President of Sales</p>
+                                </div>
+                            </div>
 
-                    </div>
-                    <div className={styles.content}>
-                        <div className={styles.reviewContent}>
-                            <Icon/>
-                            <p>
-                                Hello Arthur! How are you?! So, I don't remember ecxactly, but I'm not sure that we
-                                saw
-                                this
-                                on that meting. I'm missing some ideais at this moment, but I'm not so sure about
-                                that.
-                                So,
-                                can you check this content, please?
-                            </p>
-                            <div className={styles.currentAvatar}>
-                                <img src={"/images/home/customer-service/image-avt.png"} alt={""}/>
-                                <p className={styles.name}>Jane Cooper</p>
-                                <p>President of Sales</p>
+                        </div>
+                        <div className={styles.content}>
+                            <div className={styles.reviewContent}>
+                                <Icon/>
+                                <p>
+                                    Hello Arthur! How are you?! So, I don't remember ecxactly, but I'm not sure that we
+                                    saw
+                                    this
+                                    on that meting. I'm missing some ideais at this moment, but I'm not so sure about
+                                    that.
+                                    So,
+                                    can you check this content, please?
+                                </p>
+                                <div className={styles.currentAvatar}>
+                                    <img src={"/images/home/customer-service/image-avt.png"} alt={""}/>
+                                    <p className={styles.name}>Jane Cooper</p>
+                                    <p>President of Sales</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className={styles.content}>
-                        <div className={styles.reviewContent}>
-                            <Icon/>
-                            <p>
-                                Hello Arthur! How are you?! So, I don't remember ecxactly, but I'm not sure that we
-                                saw
-                                this
-                                on that meting. I'm missing some ideais at this moment, but I'm not so sure about
-                                that.
-                                So,
-                                can you check this content, please?
-                            </p>
-                            <div className={styles.currentAvatar}>
-                                <img src={"/images/home/customer-service/image-avt.png"} alt={""}/>
-                                <p className={styles.name}>Jane Cooper</p>
-                                <p>President of Sales</p>
+                        <div className={styles.content}>
+                            <div className={styles.reviewContent}>
+                                <Icon/>
+                                <p>
+                                    Hello Arthur! How are you?! So, I don't remember ecxactly, but I'm not sure that we
+                                    saw
+                                    this
+                                    on that meting. I'm missing some ideais at this moment, but I'm not so sure about
+                                    that.
+                                    So,
+                                    can you check this content, please?
+                                </p>
+                                <div className={styles.currentAvatar}>
+                                    <img src={"/images/home/customer-service/image-avt.png"} alt={""}/>
+                                    <p className={styles.name}>Jane Cooper</p>
+                                    <p>President of Sales</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </CustomCarousel>
-            </Mobile>
+                    </CustomCarousel>
+                </Mobile>
+            </div>
         </div>
     )
 }
