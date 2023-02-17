@@ -35,7 +35,9 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className={styles.separate}/>
+            </Container>
+            <div className={styles.separate}/>
+            <Container>
                 <div className={styles.footerBottom}>
                     Copyright (c) EDUCATION SOLUTIONS VIET NAM.,LTD. All Rights Reserved
                 </div>

@@ -8,3 +8,7 @@ export const cleanObject = (obj) => {
     }
     return result;
 };
+
+export const generateUniqueId = (pre) => {
+    return `${pre || ''}-${new Date().getTime() * Math.random()}`;
+}

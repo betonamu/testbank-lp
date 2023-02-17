@@ -6,13 +6,12 @@ import SignupTrial from "@/components/Home/SignupTrial";
 import OutstandingFeature from "@/components/Home/OutstandingFeature";
 import {Desktop} from "@/components/Common/Media";
 import CustomerReview from "@/components/Home/CustomerReview";
-import Menu from "@/components/Layout/Header/Menu";
 import MetaWrapper from "@/components/Common/MetaWrapper";
 import useDevices from "@/hooks/useDevices";
 
-import CallIcon from "../../assets/icons/call.svg";
-import MailIcon from "../../assets/icons/mail.svg";
-import LocationIcon from "../../assets/icons/location.svg";
+import CallIcon from "@/assets/icons/call.svg";
+import MailIcon from "@/assets/icons/mail.svg";
+import LocationIcon from "@/assets/icons/location.svg";
 
 import styles from "./Home.module.scss";
 
@@ -84,7 +83,6 @@ export default function Home() {
                 <Desktop>
                     <SignupTrial/>
                 </Desktop>
-                <Menu/>
             </div>
         </MetaWrapper>
     )

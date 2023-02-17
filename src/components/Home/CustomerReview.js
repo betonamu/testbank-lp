@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Container from "@/components/Common/Container";
 
 import Icon from "../../assets/icons/double.svg";
@@ -12,6 +12,8 @@ import {ssrMode} from "@/constants";
 
 const CustomerReview = () => {
     const {isDesktop} = useDevices();
+
+    const [activeReview, setActiveReview] = useState('/images/home/customer-service/image-avt.png');
 
     const renderBottomCenterControl = (slideControl) => {
         return (
@@ -45,24 +47,36 @@ const CustomerReview = () => {
                                 can you check this content, please?
                             </p>
                             <div className={styles.currentAvatar}>
-                                <img src={"/images/home/customer-service/image-avt.png"} alt={""}/>
+                                <img src={activeReview} alt={""}/>
                                 <p className={styles.name}>Jane Cooper</p>
                                 <p>President of Sales</p>
                             </div>
                         </div>
                         <Desktop>
-                            <img className={styles.review1} src={"/images/home/customer-service/image-avt.png"}
-                                 alt={""}/>
-                            <img className={styles.review2} src={"/images/home/customer-service/image-avt1.png"}
-                                 alt={""}/>
-                            <img className={styles.review3} src={"/images/home/customer-service/image-avt.png"}
-                                 alt={""}/>
-                            <img className={styles.review4} src={"/images/home/customer-service/image-avt1.png"}
-                                 alt={""}/>
-                            <img className={styles.review5} src={"/images/home/customer-service/image-avt.png"}
-                                 alt={""}/>
-                            <img className={styles.review6} src={"/images/home/customer-service/image-avt1.png"}
-                                 alt={""}/>
+                            <img className={styles.review1}
+                                 src={"/images/home/customer-service/image-avt.png"}
+                                 alt={""}
+                                 onClick={() => setActiveReview('/images/home/customer-service/image-avt.png')}/>
+                            <img className={styles.review2}
+                                 src={"/images/home/customer-service/image-avt1.png"}
+                                 alt={""}
+                                 onClick={() => setActiveReview('/images/home/customer-service/image-avt1.png')}/>
+                            <img className={styles.review3}
+                                 src={"/images/home/customer-service/image-avt.png"}
+                                 alt={""}
+                                 onClick={() => setActiveReview('/images/home/customer-service/image-avt.png')}/>
+                            <img className={styles.review4}
+                                 src={"/images/home/customer-service/image-avt1.png"}
+                                 alt={""}
+                                 onClick={() => setActiveReview('/images/home/customer-service/image-avt1.png')}/>
+                            <img className={styles.review5}
+                                 src={"/images/home/customer-service/image-avt1.png"}
+                                 alt={""}
+                                 onClick={() => setActiveReview('/images/home/customer-service/image-avt.png')}/>
+                            <img className={styles.review6}
+                                 src={"/images/home/customer-service/image-avt.png"}
+                                 alt={""}
+                                 onClick={() => setActiveReview('/images/home/customer-service/image-avt.png')}/>
                         </Desktop>
                     </div>
                 </Desktop>

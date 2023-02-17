@@ -1,0 +1,15 @@
+@import "../../../assets/scss/global";
+
+.menu-mobile-wrapper {
+    .menu-dropdown {
+        right: 20px;
+        top: 70px;
+        width: 150px;
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        height: 40px;
+    }
+}

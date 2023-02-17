@@ -1,14 +1,19 @@
 import React, {useState} from "react";
 import classNames from "classnames";
 
-import AvatarIcon from "../../assets/icons/ic-avt.svg";
+import Overview from "../../assets/icons/overview.svg";
+import Student from "../../assets/icons/student.svg";
+import Parent from "../../assets/icons/parent.svg";
+import Teacher from "../../assets/icons/teacher.svg";
+import School from "../../assets/icons/school.svg";
 
-import styles from "./OutstandingFeature.module.scss";
 import {Desktop, Mobile} from "@/components/Common/Media";
 import CustomCarousel from "@/components/Common/CustomCarousel";
 import useDevices from "@/hooks/useDevices";
-import {ssrMode} from "@/constants";
 import Container from "@/components/Common/Container";
+
+import styles from "./OutstandingFeature.module.scss";
+import Select from "@/components/Common/Controls/Select";
 
 const TABS = {
     OVERVIEW: 'overview',
@@ -22,23 +27,28 @@ const OutstandingFeature = () => {
     const tabItems = [
         {
             tabName: 'Tổng quan',
-            tabValue: TABS.OVERVIEW
+            tabValue: TABS.OVERVIEW,
+            icon: <Overview/>
         },
         {
             tabName: 'Học viên',
-            tabValue: TABS.STUDENT
+            tabValue: TABS.STUDENT,
+            icon: <Student/>
         },
         {
             tabName: 'Phụ huynh',
-            tabValue: TABS.PARENTS
+            tabValue: TABS.PARENTS,
+            icon: <Parent/>
         },
         {
             tabName: 'Giáo viên',
-            tabValue: TABS.TEACHER
+            tabValue: TABS.TEACHER,
+            icon: <Teacher/>
         },
         {
             tabName: 'Nhà trường',
-            tabValue: TABS.SCHOOL
+            tabValue: TABS.SCHOOL,
+            icon: <School/>
         },
     ];
 
@@ -81,7 +91,7 @@ const OutstandingFeature = () => {
                                         })}
                                             onClick={() => switchTab(item.tabValue)}>
                                         <div>
-                                            <AvatarIcon/>
+                                            {item.icon}
                                         </div>
                                         {item.tabName}
                                     </button>))}
@@ -192,24 +202,24 @@ const OutstandingFeature = () => {
                                         <p className={styles.description}>Quản lý lớp học, giáo viên & học sinh chặt
                                             chẽ</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number23)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number24)}>
                                         <span><p>2</p></span>
                                         <p className={styles.description}>Quản lý toàn bộ đề thi của trường</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number22)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number23)}>
                                         <span><p>3</p></span>
                                         <p className={styles.description}>Nhận đóng góp đề thi từ giáo viên</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number21)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number22)}>
                                         <span><p>4</p></span>
                                         <p className={styles.description}>Báo cáo quản lý trực quan, đa đạng</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number20)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number21)}>
                                         <span><p>5</p></span>
                                         <p className={styles.description}>Nắm được toàn bộ tình trạng học tập của học
                                             viên</p>
                                     </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number24)}>
+                                    <div className={classNames(styles.descriptionGroup, styles.number20)}>
                                         <span><p>6</p></span>
                                         <p className={styles.description}>Và nhiều tính năng khác...</p>
                                     </div>
@@ -227,6 +237,7 @@ const OutstandingFeature = () => {
                         <div className={styles.tabContent}>
                             <CustomCarousel
                                 autoPlay={5000}
+                                isInfinity={true}
                                 renderTopLeftControls={renderBottomControl}
                                 renderBottomCenterControls={null}
                                 renderCenterRightControls={null}
@@ -234,7 +245,7 @@ const OutstandingFeature = () => {
                                 <div>
                                     <button className={classNames(styles.item)}>
                                         <div>
-                                            <AvatarIcon/>
+                                            {tabItems[0].icon}
                                         </div>
                                         {tabItems[0].tabName}
                                     </button>
@@ -261,7 +272,7 @@ const OutstandingFeature = () => {
                                 <div>
                                     <button className={classNames(styles.item)}>
                                         <div>
-                                            <AvatarIcon/>
+                                            {tabItems[1].icon}
                                         </div>
                                         {tabItems[1].tabName}
                                     </button>
@@ -293,7 +304,7 @@ const OutstandingFeature = () => {
                                 <div>
                                     <button className={classNames(styles.item)}>
                                         <div>
-                                            <AvatarIcon/>
+                                            {tabItems[2].icon}
                                         </div>
                                         {tabItems[2].tabName}
                                     </button>
@@ -320,7 +331,7 @@ const OutstandingFeature = () => {
                                 <div>
                                     <button className={classNames(styles.item)}>
                                         <div>
-                                            <AvatarIcon/>
+                                            {tabItems[3].icon}
                                         </div>
                                         {tabItems[3].tabName}
                                     </button>
@@ -346,7 +357,8 @@ const OutstandingFeature = () => {
                                         </div>
                                         <div className={classNames(styles.descriptionGroup, styles.number15)}>
                                             <span><p>5</p></span>
-                                            <p className={styles.description}>Nắm được toàn bộ tình trạng học tập của học
+                                            <p className={styles.description}>Nắm được toàn bộ tình trạng học tập của
+                                                học
                                                 viên</p>
                                         </div>
                                     </div>
@@ -354,7 +366,7 @@ const OutstandingFeature = () => {
                                 <div>
                                     <button className={classNames(styles.item)}>
                                         <div>
-                                            <AvatarIcon/>
+                                            {tabItems[4].icon}
                                         </div>
                                         {tabItems[4].tabName}
                                     </button>
@@ -365,24 +377,25 @@ const OutstandingFeature = () => {
                                             <p className={styles.description}>Quản lý lớp học, giáo viên & học sinh chặt
                                                 chẽ</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number23)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number24)}>
                                             <span><p>2</p></span>
                                             <p className={styles.description}>Quản lý toàn bộ đề thi của trường</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number22)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number23)}>
                                             <span><p>3</p></span>
                                             <p className={styles.description}>Nhận đóng góp đề thi từ giáo viên</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number21)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number22)}>
                                             <span><p>4</p></span>
                                             <p className={styles.description}>Báo cáo quản lý trực quan, đa đạng</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number20)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number21)}>
                                             <span><p>5</p></span>
-                                            <p className={styles.description}>Nắm được toàn bộ tình trạng học tập của học
+                                            <p className={styles.description}>Nắm được toàn bộ tình trạng học tập của
+                                                học
                                                 viên</p>
                                         </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number24)}>
+                                        <div className={classNames(styles.descriptionGroup, styles.number20)}>
                                             <span><p>6</p></span>
                                             <p className={styles.description}>Và nhiều tính năng khác...</p>
                                         </div>

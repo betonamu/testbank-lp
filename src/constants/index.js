@@ -1,5 +1,11 @@
 export const ssrMode = typeof window === "undefined";
 
+const BASE_PATH = "/"
+
+export const paths = {
+    home: BASE_PATH
+}
+
 
 export const metaDefaults = ({origin, href}) => ({
     description: "",

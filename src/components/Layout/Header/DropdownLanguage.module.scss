@@ -1,0 +1,23 @@
+@import "../../../assets/scss/global";
+
+.dropdown-language-wrapper {
+    .dropdown-menu {
+        width: 180px;
+        height: 143px;
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        width: 100%;
+
+        svg {
+            margin-right: 9px;
+        }
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}

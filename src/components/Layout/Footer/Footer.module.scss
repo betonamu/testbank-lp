@@ -6,8 +6,11 @@
     color: white;
     margin-top: -80px !important;
 
-    [class="container"]{
-        padding: 1rem 3rem 0;
+    [class="container"] {
+
+        @include largeScreen {
+            padding: 1rem 3rem 0;
+        }
     }
 
     @include largeScreen {

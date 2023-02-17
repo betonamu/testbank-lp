@@ -32,4 +32,13 @@ p, h2, h3, h4 {
     }
 }
 
+.cursor-pointer{
+    cursor: initial;
+    @include largeScreen{
+        cursor: pointer;
+    }
+}
+
+
+
 

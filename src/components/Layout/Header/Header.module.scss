@@ -44,7 +44,7 @@
         padding: $sm-padding;
         cursor: pointer;
 
-        &:hover{
+        &:hover {
             color: $primary-color;
         }
     }
@@ -61,15 +61,51 @@
     .right-side {
         display: flex;
         align-items: center;
-        column-gap: $sm-space;
+        column-gap: $md-space;
+        @include largeScreen {
+            column-gap: $sm-space;
+
+        }
 
         .language-gr {
+            position: relative;
             display: flex;
             align-items: center;
-            cursor: pointer;
 
             svg {
                 margin-left: 5px;
+            }
+        }
+
+        .profile-gr{
+            position: relative;
+
+            .profile-icon{
+                transition: all 1s ease-in-out;
+            }
+
+            .profile-active{
+                path {
+                    fill: $primary-color;
+                }
+            }
+        }
+
+        .menu-gr {
+            .hamburger-icon {
+                transition: transform .3s ease-in-out;
+
+                path {
+                    fill: black;
+                }
+            }
+
+            .hamburger-active {
+                transform: rotate(-90deg);
+
+                path {
+                    fill: $primary-color;
+                }
             }
         }
 
