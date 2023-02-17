@@ -78,6 +78,9 @@
             position: relative;
             display: flex;
             background: #FFF8F4;
+            @include largeScreen{
+                background: transparent;
+            }
             border: 0;
             height: 68px;
             align-items: center;
