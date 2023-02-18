@@ -14,7 +14,7 @@ const TextAreaField = ({
     type = 'text',
     onChange,
     hideErrorMessage,
-    maxLength = 0,
+    maxLength,
     showCountCharacter,
     textareaStyle,
     ...props
