@@ -1,27 +1,21 @@
 import React, {useState} from "react";
 import classNames from "classnames";
 
+import {Desktop, Mobile} from "@/components/Common/Media";
+import CustomCarousel from "@/components/Common/CustomCarousel";
+import useDevices from "@/hooks/useDevices";
+import Container from "@/components/Common/Container";
+import {TABS} from "@/constants";
+import {outstandingFeatures} from "@/components/Home/data/out-standing-feature";
+import {generateUniqueId} from "@/utils";
+
 import Overview from "../../assets/icons/overview.svg";
 import Student from "../../assets/icons/student.svg";
 import Parent from "../../assets/icons/parent.svg";
 import Teacher from "../../assets/icons/teacher.svg";
 import School from "../../assets/icons/school.svg";
 
-import {Desktop, Mobile} from "@/components/Common/Media";
-import CustomCarousel from "@/components/Common/CustomCarousel";
-import useDevices from "@/hooks/useDevices";
-import Container from "@/components/Common/Container";
-
 import styles from "./OutstandingFeature.module.scss";
-import Select from "@/components/Common/Controls/Select";
-
-const TABS = {
-    OVERVIEW: 'overview',
-    STUDENT: 'student',
-    TEACHER: 'teacher',
-    PARENTS: 'parents',
-    SCHOOL: 'school'
-}
 
 const OutstandingFeature = () => {
     const tabItems = [
@@ -97,134 +91,25 @@ const OutstandingFeature = () => {
                                     </button>))}
                             </div>
                             <div className={styles.tabContent}>
-                                <div className={classNames(styles.contentWrapper, {
-                                    [styles.active]: activeTab === TABS.OVERVIEW
-                                })}>
-                                    <img src="/images/home/outstanding-feature/overview.png"/>
-                                    <div className={classNames(styles.descriptionGroup, styles.number1)}>
-                                        <span><p>1</p></span>
-                                        <p className={styles.description}>Tổng hợp số liệu trực quan</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number4)}>
-                                        <span><p>2</p></span>
-                                        <p className={styles.description}>Ngân hàng đề thi tiêu chuẩn, đa dạng</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number3)}>
-                                        <span><p>3</p></span>
-                                        <p className={styles.description}>Giao diện thân thiện</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number2)}>
-                                        <span><p>4</p></span>
-                                        <p className={styles.description}>Quản lý lịch thi, <br/>bài thi dễ dàng</p>
-                                    </div>
-                                </div>
-
-                                <div className={classNames(styles.contentWrapper, {
-                                    [styles.active]: activeTab === TABS.STUDENT
-                                })}>
-                                    <img src="/images/home/outstanding-feature/student.png"/>
-                                    <div className={classNames(styles.descriptionGroup, styles.number5)}>
-                                        <span><p>1</p></span>
-                                        <p className={styles.description}>Hệ thống câu hỏi đa dạng, độc đáo</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number9)}>
-                                        <span><p>2</p></span>
-                                        <p className={styles.description}>Phân loại đề thi theo nhiều cấp độ</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number8)}>
-                                        <span><p>3</p></span>
-                                        <p className={styles.description}>Luyện tập với nhiều bài đa dạng</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number7)}>
-                                        <span><p>4</p></span>
-                                        <p className={styles.description}>Thoả sức làm bài thi thử</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number6)}>
-                                        <span><p>5</p></span>
-                                        <p className={styles.description}>Có kết quả ngay sau khi hoàn thành bài thi</p>
-                                    </div>
-                                </div>
-                                <div className={classNames(styles.contentWrapper, {
-                                    [styles.active]: activeTab === TABS.PARENTS
-                                })}>
-                                    <img src="/images/home/outstanding-feature/parent.png"/>
-                                    <div className={classNames(styles.descriptionGroup, styles.number10)}>
-                                        <span><p>1</p></span>
-                                        <p className={styles.description}>Theo dõi tình trạng học tập của con</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number13)}>
-                                        <span><p>2</p></span>
-                                        <p className={styles.description}>Biết được lớp học con đang tham gia</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number12)}>
-                                        <span><p>3</p></span>
-                                        <p className={styles.description}>Nhận thông báo về bài thi của con</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number11)}>
-                                        <span><p>4</p></span>
-                                        <p className={styles.description}>Nắm được lịch thi của con</p>
-                                    </div>
-                                </div>
-                                <div className={classNames(styles.contentWrapper, {
-                                    [styles.active]: activeTab === TABS.TEACHER
-                                })}>
-                                    <img src="/images/home/outstanding-feature/teacher.png"/>
-                                    <div className={classNames(styles.descriptionGroup, styles.number14)}>
-                                        <span><p>1</p></span>
-                                        <p className={styles.description}>Quản lý Lịch thi & đề thi rõ ràng</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number18)}>
-                                        <span><p>2</p></span>
-                                        <p className={styles.description}>Cấu trúc đề thi đa dạng</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number17)}>
-                                        <span><p>3</p></span>
-                                        <p className={styles.description}>Tự thiết lập đề thi hoặc sử dụng mẫu từ
-                                            TestBank</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number16)}>
-                                        <span><p>4</p></span>
-                                        <p className={styles.description}>Dễ dàng quản lý lớp học & học viên của
-                                            mình</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number15)}>
-                                        <span><p>5</p></span>
-                                        <p className={styles.description}>Nắm được toàn bộ tình trạng học tập của học
-                                            viên</p>
-                                    </div>
-                                </div>
-                                <div className={classNames(styles.contentWrapper, {
-                                    [styles.active]: activeTab === TABS.SCHOOL
-                                })}>
-                                    <img src="/images/home/outstanding-feature/school.png"/>
-                                    <div className={classNames(styles.descriptionGroup, styles.number19)}>
-                                        <span><p>1</p></span>
-                                        <p className={styles.description}>Quản lý lớp học, giáo viên & học sinh chặt
-                                            chẽ</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number24)}>
-                                        <span><p>2</p></span>
-                                        <p className={styles.description}>Quản lý toàn bộ đề thi của trường</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number23)}>
-                                        <span><p>3</p></span>
-                                        <p className={styles.description}>Nhận đóng góp đề thi từ giáo viên</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number22)}>
-                                        <span><p>4</p></span>
-                                        <p className={styles.description}>Báo cáo quản lý trực quan, đa đạng</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number21)}>
-                                        <span><p>5</p></span>
-                                        <p className={styles.description}>Nắm được toàn bộ tình trạng học tập của học
-                                            viên</p>
-                                    </div>
-                                    <div className={classNames(styles.descriptionGroup, styles.number20)}>
-                                        <span><p>6</p></span>
-                                        <p className={styles.description}>Và nhiều tính năng khác...</p>
-                                    </div>
-                                </div>
-                                <div/>
+                                {outstandingFeatures.map((item) => {
+                                    let currentStartIndex = item.startIndex;
+                                    return (
+                                        <div key={generateUniqueId('feature')}
+                                             className={classNames(styles.contentWrapper, {
+                                                 [styles.active]: activeTab === item.tabName
+                                             })}>
+                                            <img src={item.bgImage} alt=""/>
+                                            {item.descriptions.map((des, index) => (
+                                                <div key={generateUniqueId('des-item')}
+                                                     className={classNames(styles.descriptionGroup, styles[`number${currentStartIndex++}`]
+                                                     )}>
+                                                    <span><p>{index + 1}</p></span>
+                                                    <p className={styles.description}>{des}</p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )
+                                })}
                             </div>
                         </Desktop>
                     </div>
@@ -242,165 +127,29 @@ const OutstandingFeature = () => {
                                 renderBottomCenterControls={null}
                                 renderCenterRightControls={null}
                                 renderCenterLeftControls={null}>
-                                <div>
-                                    <button className={classNames(styles.item)}>
-                                        <div>
-                                            {tabItems[0].icon}
+                                {outstandingFeatures.map((item, index) => {
+                                    let currentStartIndex = item.startIndex;
+                                    return (
+                                        <div key={generateUniqueId('feature')}>
+                                            <button className={classNames(styles.item)}>
+                                                <div>
+                                                    {tabItems[index].icon}
+                                                </div>
+                                                {tabItems[index].tabName}
+                                            </button>
+                                            <div className={classNames(styles.contentWrapper)}>
+                                                <img src={item.bgImage} alt=""/>
+                                                {item.descriptions.map((des, index) => (
+                                                    <div key={generateUniqueId('des-item')}
+                                                         className={classNames(styles.descriptionGroup)}>
+                                                        <span><p>{index + 1}</p></span>
+                                                        <p className={styles.description}>{des}</p>
+                                                    </div>
+                                                ))}
+                                            </div>
                                         </div>
-                                        {tabItems[0].tabName}
-                                    </button>
-                                    <div className={styles.contentWrapper}>
-                                        <img src="/images/home/outstanding-feature/overview-mobile.png"/>
-                                        <div className={classNames(styles.descriptionGroup, styles.number1)}>
-                                            <span><p>1</p></span>
-                                            <p className={styles.description}>Tổng hợp số liệu trực quan</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number4)}>
-                                            <span><p>2</p></span>
-                                            <p className={styles.description}>Ngân hàng đề thi tiêu chuẩn, đa dạng</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number3)}>
-                                            <span><p>3</p></span>
-                                            <p className={styles.description}>Giao diện thân thiện</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number2)}>
-                                            <span><p>4</p></span>
-                                            <p className={styles.description}>Quản lý lịch thi, <br/>bài thi dễ dàng</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <button className={classNames(styles.item)}>
-                                        <div>
-                                            {tabItems[1].icon}
-                                        </div>
-                                        {tabItems[1].tabName}
-                                    </button>
-                                    <div className={styles.contentWrapper}>
-                                        <img src="/images/home/outstanding-feature/student-mobile.png"/>
-                                        <div className={classNames(styles.descriptionGroup, styles.number5)}>
-                                            <span><p>1</p></span>
-                                            <p className={styles.description}>Hệ thống câu hỏi đa dạng, độc đáo</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number9)}>
-                                            <span><p>2</p></span>
-                                            <p className={styles.description}>Phân loại đề thi theo nhiều cấp độ</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number8)}>
-                                            <span><p>3</p></span>
-                                            <p className={styles.description}>Luyện tập với nhiều bài đa dạng</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number7)}>
-                                            <span><p>4</p></span>
-                                            <p className={styles.description}>Thoả sức làm bài thi thử</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number6)}>
-                                            <span><p>5</p></span>
-                                            <p className={styles.description}>Có kết quả ngay sau khi hoàn thành bài
-                                                thi</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <button className={classNames(styles.item)}>
-                                        <div>
-                                            {tabItems[2].icon}
-                                        </div>
-                                        {tabItems[2].tabName}
-                                    </button>
-                                    <div className={styles.contentWrapper}>
-                                        <img src="/images/home/outstanding-feature/parent-mobile.png"/>
-                                        <div className={classNames(styles.descriptionGroup, styles.number10)}>
-                                            <span><p>1</p></span>
-                                            <p className={styles.description}>Theo dõi tình trạng học tập của con</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number13)}>
-                                            <span><p>2</p></span>
-                                            <p className={styles.description}>Biết được lớp học con đang tham gia</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number12)}>
-                                            <span><p>3</p></span>
-                                            <p className={styles.description}>Nhận thông báo về bài thi của con</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number11)}>
-                                            <span><p>4</p></span>
-                                            <p className={styles.description}>Nắm được lịch thi của con</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <button className={classNames(styles.item)}>
-                                        <div>
-                                            {tabItems[3].icon}
-                                        </div>
-                                        {tabItems[3].tabName}
-                                    </button>
-                                    <div className={classNames(styles.contentWrapper)}>
-                                        <img src="/images/home/outstanding-feature/teacher-mobile.png"/>
-                                        <div className={classNames(styles.descriptionGroup, styles.number14)}>
-                                            <span><p>1</p></span>
-                                            <p className={styles.description}>Quản lý Lịch thi & đề thi rõ ràng</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number18)}>
-                                            <span><p>2</p></span>
-                                            <p className={styles.description}>Cấu trúc đề thi đa dạng</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number17)}>
-                                            <span><p>3</p></span>
-                                            <p className={styles.description}>Tự thiết lập đề thi hoặc sử dụng mẫu từ
-                                                TestBank</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number16)}>
-                                            <span><p>4</p></span>
-                                            <p className={styles.description}>Dễ dàng quản lý lớp học & học viên của
-                                                mình</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number15)}>
-                                            <span><p>5</p></span>
-                                            <p className={styles.description}>Nắm được toàn bộ tình trạng học tập của
-                                                học
-                                                viên</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <button className={classNames(styles.item)}>
-                                        <div>
-                                            {tabItems[4].icon}
-                                        </div>
-                                        {tabItems[4].tabName}
-                                    </button>
-                                    <div className={styles.contentWrapper}>
-                                        <img src="/images/home/outstanding-feature/school-mobile.png"/>
-                                        <div className={classNames(styles.descriptionGroup, styles.number19)}>
-                                            <span><p>1</p></span>
-                                            <p className={styles.description}>Quản lý lớp học, giáo viên & học sinh chặt
-                                                chẽ</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number24)}>
-                                            <span><p>2</p></span>
-                                            <p className={styles.description}>Quản lý toàn bộ đề thi của trường</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number23)}>
-                                            <span><p>3</p></span>
-                                            <p className={styles.description}>Nhận đóng góp đề thi từ giáo viên</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number22)}>
-                                            <span><p>4</p></span>
-                                            <p className={styles.description}>Báo cáo quản lý trực quan, đa đạng</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number21)}>
-                                            <span><p>5</p></span>
-                                            <p className={styles.description}>Nắm được toàn bộ tình trạng học tập của
-                                                học
-                                                viên</p>
-                                        </div>
-                                        <div className={classNames(styles.descriptionGroup, styles.number20)}>
-                                            <span><p>6</p></span>
-                                            <p className={styles.description}>Và nhiều tính năng khác...</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                    )
+                                })}
                             </CustomCarousel>
                         </div>
                     </div>

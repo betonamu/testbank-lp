@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import * as Yup from "yup";
 
 import Banner from "@/components/Home/Banner";
 import Subscribe from "@/components/Home/Subscribe";
@@ -14,10 +15,39 @@ import MailIcon from "@/assets/icons/mail.svg";
 import LocationIcon from "@/assets/icons/location.svg";
 
 import styles from "./Home.module.scss";
+import {FormikContext, FormikProvider, useFormik} from "formik";
+import BaseForm from "@/components/Common/Controls/BaseForm";
+import InputTextField from "@/components/Common/Form/InputTextField";
+import TextAreaField from "@/components/Common/Form/TextAreaField";
+import {emailRegExp, phoneRegExp} from "@/constants";
 
 
 export default function Home() {
     const {isDesktop} = useDevices();
+
+    const onSubmit = (values) => {
+        console.log(values);
+    }
+
+    const validationSchema = () => {
+        return Yup.object().shape({
+            name: Yup.string()
+                .required('Required'),
+            phone: Yup.string()
+                .required('Required')
+                .matches(phoneRegExp, 'Wrong phone, please try again'),
+            email: Yup.string()
+                .required('Required')
+                .matches(emailRegExp, 'Wrong email, please try again')
+        });
+    }
+
+    const formikBag = useFormik({
+        initialValues: {},
+        validationSchema,
+        onSubmit
+    });
+
     return (
         <MetaWrapper>
             <div className={styles.homeWrapper}>
@@ -36,48 +66,59 @@ export default function Home() {
                         style={{border: 0, marginTop: -150}}
                     />
 
-                    <form className={styles.form}>
-                        <h3>
-                            <span>Liên hệ </span>
-                            với chúng tôi
-                        </h3>
-                        <div className={styles.inputField}>
-                            <p>Tên của bạn</p>
-                            <input placeholder="Tên của bạn"/>
-                        </div>
-                        <div className={styles.inputField}>
-                            <p>Số điện thoại</p>
-                            <input placeholder="Số điện thoại của bạn"/>
-                        </div>
-                        <div className={styles.inputField}>
-                            <p>Email</p>
-                            <input placeholder="Email của bạn"/>
-                        </div>
+                    <FormikContext.Provider value={formikBag}>
+                        <BaseForm className={styles.form}>
+                            <h3>
+                                <span>Liên hệ </span>
+                                với chúng tôi
+                            </h3>
+                            <div className={styles.inputField}>
+                                <p>Tên của bạn</p>
+                                <InputTextField
+                                    name={"name"}
+                                    placeholder="Tên của bạn"/>
+                            </div>
+                            <div className={styles.inputField}>
+                                <p>Số điện thoại</p>
+                                <InputTextField
+                                    name={"phone"}
+                                    placeholder="Số điện thoại của bạn"/>
+                            </div>
+                            <div className={styles.inputField}>
+                                <p>Email</p>
+                                <InputTextField
+                                    name={'email'}
+                                    placeholder="Email của bạn"/>
+                            </div>
 
-                        <div className={styles.inputField}>
-                            <p>Thắc mắc</p>
-                            <textarea rows={7} placeholder="Gửi chúng tôi thắc mắc của bạn"/>
-                        </div>
-                        <p>Liên hệ nhân viên bán hàng</p>
-                        <p><CallIcon/>(+84) 28 3845 6936</p>
+                            <div className={styles.inputField}>
+                                <p>Thắc mắc</p>
+                                <TextAreaField
+                                    name="feedback"
+                                    rows={6}
+                                    placeholder="Gửi chúng tôi thắc mắc của bạn"/>
+                            </div>
+                            <p>Liên hệ nhân viên bán hàng</p>
+                            <p><CallIcon/>(+84) 28 3845 6936</p>
 
-                        <div className={styles.info}>
-                            <h4>CÔNG TY TNHH EDUCATION SOFTWARE VIỆT NAM</h4>
-                            <div className={styles.infoItem}>
-                                <div><LocationIcon/></div>
-                                <p>148-150 Nguyễn Đình Chính, Phường 8, Quận Phú Nhuận, Thành phố Hồ Chí
-                                    Minh.</p>
+                            <div className={styles.info}>
+                                <h4>CÔNG TY TNHH EDUCATION SOFTWARE VIỆT NAM</h4>
+                                <div className={styles.infoItem}>
+                                    <div><LocationIcon/></div>
+                                    <p>148-150 Nguyễn Đình Chính, Phường 8, Quận Phú Nhuận, Thành phố Hồ Chí
+                                        Minh.</p>
+                                </div>
+                                <div className={styles.infoItem}>
+                                    <MailIcon/>
+                                    <p>(+84) 28 3620 5448</p>
+                                </div>
+                                <div className={styles.infoItem}>
+                                    <CallIcon/>
+                                    <p>info@dtp-education.com</p>
+                                </div>
                             </div>
-                            <div className={styles.infoItem}>
-                                <MailIcon/>
-                                <p>(+84) 28 3620 5448</p>
-                            </div>
-                            <div className={styles.infoItem}>
-                                <CallIcon/>
-                                <p>info@dtp-education.com</p>
-                            </div>
-                        </div>
-                    </form>
+                        </BaseForm>
+                    </FormikContext.Provider>
                 </div>
 
                 <Desktop>

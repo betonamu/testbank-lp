@@ -13,7 +13,7 @@ const MenuMobile = ({scrollToElement, setIsShowMenu}) => {
 
     return (
         <div className={styles.menuMobileWrapper}>
-            <BaseDropdownMenu className={styles.menuDropdown}>
+            <BaseDropdownMenu className={styles.menuDropdown} onClickOutside={setIsShowMenu}>
                 {headerItems.map((item, index) => (
                     <div key={generateUniqueId('header')}
                          className={styles.item}

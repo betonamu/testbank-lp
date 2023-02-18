@@ -32,6 +32,7 @@
             .label {
                 width: fit-content;
                 padding: 0 10px;
+                font-weight: 600;
             }
         }
     }
@@ -47,6 +48,7 @@
         border-radius: 12px;
 
         p {
+            color: #757688;
             font-size: 10px;
         }
 
@@ -59,12 +61,17 @@
             cursor: pointer;
             padding: 8px 10px;
             border: 1px solid transparent;
+            font-weight: 500;
 
             &:hover {
                 background: #FFF4F4;
                 border-color: #ED3902;
                 border-radius: 4px;
             }
+        }
+
+        .active{
+            color: $primary-color
         }
     }
 }

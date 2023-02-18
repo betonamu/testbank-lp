@@ -13,6 +13,7 @@
     "classnames": "^2.3.2",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
+    "formik": "^2.2.9",
     "google-map-react": "^2.2.0",
     "next": "12.3.4",
     "next-react-svg": "^1.2.0",
@@ -20,6 +21,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-modal": "^3.16.1",
-    "sass": "^1.58.0"
+    "sass": "^1.58.0",
+    "yup": "^1.0.0"
   }
 }

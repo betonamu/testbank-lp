@@ -32,7 +32,9 @@ const Select = ({options, defaultValue, onChange, className}) => {
                 <p>Bạn là</p>
                 {options.map((item, index) => (
                     <div key={index}
-                         className={styles.item}
+                         className={classNames(styles.item, {
+                             [styles.active]: item.value === defaultValue.value
+                         })}
                          onClick={() => onSelectedItem(item)}>
                         {item.label}
                     </div>

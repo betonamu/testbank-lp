@@ -1,0 +1,91 @@
+@import "../../../assets/scss/global.scss";
+
+.input-text-field {
+    &:not(:first-child) {
+        margin-top: 1rem;
+    }
+
+    label {
+        font-size: 12px;
+        line-height: 18px;
+
+        span {
+            margin-left: 3px;
+            color: #f33060;
+        }
+    }
+
+    .input-group {
+        position: relative;
+        border-radius: 12px;
+
+        textarea {
+            width: 100%;
+            border: 1px solid #E8ECEE;
+            border-radius: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            padding: 16px;
+            font-weight: 500;
+            height: initial;
+            resize: none;
+
+            &.has-icon-left {
+                padding-left: 28px;
+            }
+            &.has-icon-right {
+                padding-right: 28px;
+            }
+            &:focus {
+                border-color:  #7868E4;
+            }
+        }
+
+        .count {
+            // position: absolute;
+            bottom: 2px;
+            right: 12px;
+            font-size: 14px;
+            line-height: 24px;
+            color: #8E9AAB;
+            text-align: right;
+            padding-right: 12px;
+        }
+
+        .icon-left {
+            position: absolute;
+            top: 9px;
+            left: 4px;
+            width: 20px;
+        }
+        .icon-right {
+            position: absolute;
+            top: 9px;
+            right: 4px;
+            width: 20px;
+        }
+    }
+
+    &.error {
+        label {
+            color: #f33060;
+        }
+        textarea,
+        input {
+            border-bottom-color: #f33060 !important;
+        }
+
+        &.full-border {
+            input {
+                border-color: #f33060 !important;
+            }
+        }
+
+        .feedback {
+            color: #f33060;
+            font-size: 12px;
+            line-height: 18px;
+            margin-top: 2px;
+        }
+    }
+}

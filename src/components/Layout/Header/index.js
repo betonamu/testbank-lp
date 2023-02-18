@@ -74,7 +74,7 @@ const Header = () => {
                                 <VietNamFlag/>
                                 <Chevron/>
 
-                                {isShowDropdown && <DropdownLanguage/>}
+                                {isShowDropdown && <DropdownLanguage onClose={setIsShowDropdown}/>}
                             </div>
                             <Button className={styles.btnLogin}
                                     type="outline">
@@ -88,21 +88,23 @@ const Header = () => {
                     </Desktop>
                     <Mobile>
                         <div className={styles.leftSide}>
-                            <LogoMobile/>
+                            <Link href={paths.home}>
+                                <LogoMobile/>
+                            </Link>
                         </div>
                         <div className={styles.rightSide}>
                             <div className={classNames(styles.languageGr, 'cursor-pointer')}
                                  onClick={() => setIsShowDropdown(!isShowDropdown)}>
                                 <VietNamFlag/>
                                 <Chevron/>
-                                {isShowDropdown && <DropdownLanguage/>}
+                                {isShowDropdown && <DropdownLanguage onClose={setIsShowDropdown}/>}
                             </div>
                             <div className={styles.profileGr}>
                                 <Profile className={classNames(styles.profileIcon, 'cursor-pointer', {
                                     [styles.profileActive]: isShowProfile
                                 })}
                                          onClick={() => setIsShowProfile(!isShowProfile)}/>
-                                {isShowProfile && <DropdownProfileMobile/>}
+                                {isShowProfile && <DropdownProfileMobile onClose={setIsShowProfile}/>}
                             </div>
                             <div className={styles.menuGr}>
                                 <MenuIcon
