@@ -22,7 +22,9 @@ const Select = ({options, defaultValue, onChange, className}) => {
              onClick={() => setIsShow(!isShow)}>
             <div className={styles.select}>
                 <div className={styles.content}>
-                    <AvatarIcon className={styles.imgLabel}/>
+                    <div className={styles.imgLabel}>
+                        {selectedItem.icon}
+                    </div>
                     <p className={styles.label}>{selectedItem.label}</p>
                 </div>
                 <ChevronIcon/>
@@ -33,7 +35,7 @@ const Select = ({options, defaultValue, onChange, className}) => {
                 {options.map((item, index) => (
                     <div key={index}
                          className={classNames(styles.item, {
-                             [styles.active]: item.value === defaultValue.value
+                             [styles.active]: item.value === selectedItem.value
                          })}
                          onClick={() => onSelectedItem(item)}>
                         {item.label}

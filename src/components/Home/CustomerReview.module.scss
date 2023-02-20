@@ -23,7 +23,7 @@
         .dot-item {
             height: 8px;
             width: 8px;
-            background: red;
+            background: #FFBEAF;
             border-radius: 100%;
             box-sizing: border-box;
         }
@@ -31,6 +31,7 @@
         .active {
             width: 40px;
             border-radius: 4px;
+            background: $primary-color;
         }
     }
 

@@ -6,6 +6,10 @@ import {studentPricings} from "@/components/Home/data/price";
 
 import TickIcon from "../../assets/icons/tick.svg";
 import TickOrangeIcon from "../../assets/icons/tick-orange.svg";
+import Student from "../../assets/icons/student.svg";
+import Parent from "../../assets/icons/parent.svg";
+import Teacher from "../../assets/icons/teacher.svg";
+import School from "../../assets/icons/school.svg";
 
 import styles from "./Subscribe.module.scss";
 import Container from "@/components/Common/Container";
@@ -22,19 +26,23 @@ const Subscribe = () => {
     const tabItems = [
         {
             label: 'Học viên',
-            value: TABS.STUDENT
+            value: TABS.STUDENT,
+            icon: <Student/>
         },
         {
             label: 'Phụ huynh',
-            value: TABS.PARENTS
+            value: TABS.PARENTS,
+            icon: <Parent/>
         },
         {
             label: 'Giáo viên',
-            value: TABS.TEACHER
+            value: TABS.TEACHER,
+            icon: <Teacher/>
         },
         {
             label: 'Nhà trường',
-            value: TABS.SCHOOL
+            value: TABS.SCHOOL,
+            icon: <School/>
         },
     ];
 
@@ -71,17 +79,15 @@ const Subscribe = () => {
                     <div className={styles.tabs}>
                         <Desktop>
                             <div className={styles.tabItems}>
-                                {
-                                    tabItems.map(item => (
-                                        <button key={item.value} className={
-                                            classNames({
-                                                [styles.active]: activeTab === item.value
-                                            })}
-                                                onClick={() => switchTab(item.value)}>
-                                            {item.label}
-                                        </button>
-                                    ))
-                                }
+                                {tabItems.map(item => (
+                                    <button key={item.value} className={
+                                        classNames({
+                                            [styles.active]: activeTab === item.value
+                                        })}
+                                            onClick={() => switchTab(item.value)}>
+                                        {item.label}
+                                    </button>
+                                ))}
                             </div>
                         </Desktop>
                         <div className={styles.tabContent}>

@@ -3,7 +3,7 @@ import { ssrMode } from '@/constants';
 
 const calcDevices = width => {
     const isMobile = width < 768;
-    const isDesktop = width > 1280;
+    const isDesktop = width >= 1280;
     const isTablet = !isDesktop && !isMobile;
     return { isMobile, isTablet, isDesktop };
 }

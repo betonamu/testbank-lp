@@ -156,12 +156,7 @@
                             .option {
                                 font-size: 13px;
                                 margin-top: -15px;
-                                color: black;
-
-                                @include largeScreen {
-                                    color: #6DC27A;
-
-                                }
+                                color: #6DC27A;
                             }
 
                             ul {
@@ -171,26 +166,38 @@
                             }
                         }
                     }
-                }
 
-                .active-plan {
-                    background: linear-gradient(180deg, #FF8C67 46.88%, #E64343 100%);
-                    color: white;
+                    &.active-plan {
+                        background: linear-gradient(180deg, #FF8C67 46.88%, #E64343 100%);
+                        color: white;
 
-                    svg {
-                        path {
-                            fill: white;
+                        span > svg {
+                            path {
+                                fill: white;
+                            }
+                        }
+
+                        .descriptions {
+                            .option {
+                                color: $dark-color;
+                            }
+                        }
+
+                        .day-trial {
+                            color: $dark-color;
+                        }
+
+                        .select-btn {
+                            background: white;
+
+                            &:hover {
+                                color: $primary-color;
+                            }
                         }
                     }
-
-                    .select-btn {
-                        background: white;
-
-                        &:hover {
-                            color: $primary-color;
-                        }
-                    }
                 }
+
+
             }
 
             .trial {
