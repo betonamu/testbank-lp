@@ -1,0 +1,68 @@
+@import "../../../assets/scss/global";
+
+.switch {
+    position: relative;
+    display: inline-block;
+    padding: 4px;
+    background: #ECEBF3;
+    border-radius: 12px;
+    cursor: pointer;
+    height: 40px;
+
+    &.disable{
+        cursor: not-allowed;
+    }
+
+    .active-bg {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: calc(50% - 4px);
+        height: calc(100% - 8px);
+        background: #7C68EE;
+        border-radius: 12px;
+        transition: all .2s;
+    }
+
+    span {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 17px;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, .06);
+        width: 50%;
+        height: 100%;
+        padding: 2px 8px;
+        display: inline-block;
+        position: relative;
+        pointer-events: none;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .2s;
+    }
+
+    .left {
+        color: white;
+    }
+
+    .right {
+        color: $grey-color;
+    }
+
+    .toggle-round-flat {
+        position: absolute;
+        visibility: hidden;
+
+        &:checked~.right {
+            color: white;
+        }
+
+        &:checked~.left {
+            color: $grey-color;
+        }
+
+        &:checked~.active-bg {
+            left: 50%;
+        }
+    }
+}

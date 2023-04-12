@@ -1,10 +1,6 @@
 @import "../../../assets/scss/global.scss";
 
 .input-text-field {
-    &:not(:first-child) {
-        margin-top: 1rem;
-    }
-
     label {
         font-size: 12px;
         line-height: 18px;
@@ -17,40 +13,70 @@
 
     .input-group {
         position: relative;
+        border: 1px solid #E8ECEE;
         border-radius: 12px;
+        overflow: hidden;
+        height: 174px;
+
+        &:focus-within {
+            border-color: $secondary-color;
+        }
 
         textarea {
+            position: absolute;
+            left: 0;
+            top: 0;
             width: 100%;
-            border: 1px solid #E8ECEE;
             border-radius: 10px;
             box-sizing: border-box;
-            margin-bottom: 20px;
             padding: 16px;
-            height: initial;
             resize: none;
             color: #202226;
             font-weight: 500;
             font-size: 15px;
             line-height: 22px;
+            border: 0;
+            outline: none;
 
             &.has-icon-left {
                 padding-left: 28px;
             }
+
             &.has-icon-right {
                 padding-right: 28px;
             }
-            &:focus {
-                border-color:  #7868E4;
+
+            &.has-data {
+                top: 10px;
+            }
+        }
+
+        .label {
+            position: absolute;
+            pointer-events: none;
+            top: 27px;
+            left: 0;
+            transform: translateY(-50%);
+            padding-left: 16px;
+            font-size: 12px;
+            transition: all .2s ease-in-out;
+            width: 100%;
+            background: #FFFFFF;
+
+            &.has-data {
+                color: $secondary-color;
+                top: 16px;
+                visibility: visible;
             }
         }
 
         .count {
-            // position: absolute;
-            bottom: 2px;
-            right: 12px;
-            font-size: 14px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 12px;
             line-height: 24px;
-            color: #8E9AAB;
+            color: $grey-color;
             text-align: right;
             padding-right: 12px;
         }
@@ -61,6 +87,7 @@
             left: 4px;
             width: 20px;
         }
+
         .icon-right {
             position: absolute;
             top: 9px;
@@ -73,6 +100,7 @@
         label {
             color: #f33060;
         }
+
         textarea,
         input {
             border-bottom-color: #f33060 !important;

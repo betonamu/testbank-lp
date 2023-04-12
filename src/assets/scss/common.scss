@@ -1,5 +1,21 @@
 html {
     font-family: $font-family;
+    scrollbar-width: thin !important;
+
+    ::-webkit-scrollbar {
+        width: 5px;
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #d4dde7;
+        border-radius: 8px;
+    }
 }
 
 body {
@@ -10,12 +26,22 @@ button {
     cursor: pointer;
 }
 
-input, button, textarea {
+input,
+button,
+textarea {
     font-family: $font-family;
     outline: none;
 }
 
-p, h2, h3, h4 {
+input::placeholder {
+    font-weight: 500 !important;
+    font-size: 15px !important;
+}
+
+p,
+h2,
+h3,
+h4 {
     padding: 0;
     margin: 0;
 }
@@ -32,13 +58,26 @@ p, h2, h3, h4 {
     }
 }
 
-.cursor-pointer{
+.cursor-pointer {
     cursor: initial;
-    @include largeScreen{
+
+    @include largeScreen {
         cursor: pointer;
     }
 }
 
+.break-line {
+    white-space: pre-line;
+}
 
+.fw-700 {
+    font-weight: 700;
+}
 
-
+.error-feedback {
+    font-weight: 500;
+    font-size: 13px;
+    color: $primary-color;
+    line-height: 27px;
+    height: 10px;
+}

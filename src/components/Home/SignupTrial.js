@@ -1,7 +1,5 @@
-import React from "react";
-
-import Button from "@/components/Common/Controls/Button";
 import Container from "@/components/Common/Container";
+import Button from "@/components/Common/Controls/Button";
 
 import ITestIcon from "../../assets/icons/i-test.svg";
 
@@ -12,15 +10,15 @@ const SignupTrial = () => {
         <Container>
             <div className={styles.signupTrialWrapper}>
                 <h3>Trải nghiệm miễn phí</h3>
-                <ITestIcon/>
+                <ITestIcon />
 
                 <div className={styles.submitForm}>
-                    <input placeholder="Nhập email hoặc SĐT để dùng thử miễn phí"/>
+                    <input placeholder="Nhập email hoặc SĐT để dùng thử miễn phí" />
                     <Button type="primary">Dùng thử ngay</Button>
                 </div>
             </div>
         </Container>
-    )
-}
+    );
+};
 
 export default SignupTrial;

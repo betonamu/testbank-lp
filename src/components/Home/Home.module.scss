@@ -62,7 +62,7 @@
                 width: 100%;
 
                 p {
-                    color: #202226;
+                    color: $dark-color;
                     font-size: 13px;
                     line-height: 17px;
                     margin-bottom: 5px;
@@ -72,6 +72,40 @@
             p {
                 svg {
                     margin-right: 10px;
+                }
+            }
+
+            .contact-our {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                button {
+                    min-width: 100px;
+                }
+
+                @include largeScreen {
+                    button {
+                        min-width: 130px;
+                    }
+                }
+
+                p {
+                    font-weight: 400;
+                    font-size: 13px;
+                    line-height: 17px;
+                    color: $dark-color;
+
+                    &:nth-child(2) {
+                        display: flex;
+                        align-items: center;
+                        font-weight: 500;
+                        margin-top: 8px;
+
+                        svg {
+                            margin: 0 6px 0 0;
+                        }
+                    }
                 }
             }
         }
@@ -93,23 +127,25 @@
             border-radius: 24px;
 
             @include largeScreen {
-                right: -385px;
+                right: -395px;
                 top: 0;
                 left: initial;
-                width: 365px;
+                width: 375px;
                 height: 205px;
             }
 
             h4 {
-                color: #202226;
+                color: $dark-color;
+                font-size: 16px;
             }
 
-            .info-item{
+            .info-item {
                 display: flex;
                 justify-content: center;
+                font-weight: 500;
 
-                svg{
-                    margin-right: 10px;
+                svg {
+                    margin: 2px 6px 0 0;
                 }
             }
         }

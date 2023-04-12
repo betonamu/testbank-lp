@@ -1,23 +1,31 @@
 $font-family: "Inter", serif;
 
-$sm-padding: 0.75rem;
-$md-padding: 1.5rem;
+$sm-padding: 12px;
+$md-padding: 24px;
 $lg-padding: 2.25rem;
 
-$sm-space: 0.75rem;
-$md-space: 1.25rem;
+$sm-space: 12px;
+$md-space: 20px;
 $lg-space: 1.75rem;
 
 //color
-
-$primary-color: #ED3902;
+$primary-color: #FF6337;
 $primary-color2: #F76E48;
+$primary-color3: #FFF8F4;
+$primary-color4: #F08080;
+$border-color: #E2E5F2;
 $secondary-color: #7C68EE;
+$secondary-color2: #DFDAFF;
+$secondary-color3: #F5F4FF;
 $grey-color: #8E91A0;
+$grey-color1: #757688;
+$grey-color2: #B7B7B7;
 $dark-color: #202226;
+$success-color: #21C274;
 
 
 //media screen
+$wide-screen: 1920px;
 $large-screen: 1280px;
 $medium-screen: 992px;
 $small-screen: 576px;

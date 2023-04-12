@@ -6,35 +6,89 @@
     justify-content: center;
     padding: $sm-padding $md-padding;
     border-radius: 40px;
-    font-size: 1rem;
+    font-size: 15px;
     font-weight: 600;
     cursor: initial;
+    column-gap: 10px;
+    border: 0;
+
+    @include largeScreen {
+        cursor: pointer;
+    }
 
     svg {
         margin-right: 7px;
     }
 
-    &:hover {
-        background: linear-gradient(88.16deg, #F79945 1.56%, #F84C26 97.89%);
-        box-shadow: 0 12px 20px rgba(248, 76, 38, 0.15);
-        color: white;
-        border: 1px solid transparent;
-    }
-
     @include largeScreen {
-        cursor: pointer;
+        &:not(.none, .secondary):hover {
+            background: linear-gradient(88.16deg, #F79945 1.56%, #F84C26 97.89%);
+            box-shadow: 0 12px 20px rgba(248, 76, 38, 0.15);
+            color: white;
+        }
     }
-}
 
-.outline {
-    background-color: transparent;
-    border: 1px solid $primary-color;
-    color: $primary-color;
-}
+    &.outline {
+        background-color: white;
+        border: 1px solid $primary-color;
+        color: $primary-color;
+        padding: 11px 23px;
 
-.primary {
-    background-color: $primary-color;
-    color: white;
-    border: 1px solid $primary-color;
-    box-shadow: 0 12px 20px rgba(248, 76, 38, 0.15);
+        &:hover {
+            border: 0;
+            padding: $sm-padding $md-padding;
+        }
+    }
+
+    &.primary {
+        background-color: $primary-color;
+        color: white;
+        box-shadow: 0 12px 20px rgba(248, 76, 38, 0.15);
+    }
+
+    &.secondary {
+        background-color: $secondary-color;
+        color: white;
+        box-shadow: 0 12px 20px rgba(248, 76, 38, 0.15);
+
+        @include largeScreen {
+            &:hover {
+                background: linear-gradient(92.79deg, #FF6CF0 4.55%, #7C68EE 96.42%);
+            }
+        }
+    }
+
+    &.success {
+        background-color: $success-color;
+        color: white;
+        box-shadow: 0 12px 18px rgba(150, 209, 159, 0.25);
+
+        @include largeScreen {
+            &:hover {
+                background: linear-gradient(88.16deg, #AAEF66 1.56%, #39BA4C 97.89%);
+                box-shadow: 0 12px 18px rgba(150, 209, 159, 0.25);
+                border-radius: 40px;
+            }
+        }
+    }
+
+    &.disable {
+        pointer-events: none;
+        background-color: #F7F8FC;
+        color: grey;
+    }
+
+    &.none {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        padding: $sm-padding 0;
+        font-weight: 500;
+        height: fit-content;
+        width: fit-content;
+
+        svg {
+            margin: 0;
+        }
+    }
 }

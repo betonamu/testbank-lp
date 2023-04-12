@@ -1,25 +1,30 @@
 .basic-modal {
     overflow: auto;
+
     &.open {
         overflow: hidden;
     }
+
     .overlay {
         position: fixed;
         inset: 0;
+        z-index: 2;
         background-color: rgba(0, 0, 0, 0.6);
+
         .content {
             top: 50%;
             left: 50%;
-            right: auto;
-            bottom: auto;
             margin-right: -50%;
             transform: translate(-50%, -50%);
             position: absolute;
-            background: #fff;
             border: none;
             outline: none;
             padding: 20px;
             max-width: calc(100% - 32px);
+            background: #FFFFFF;
+            box-shadow: 21px 21px 59px rgba(121, 49, 39, 0.11);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
         }
     }
 }

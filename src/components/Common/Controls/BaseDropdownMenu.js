@@ -1,11 +1,25 @@
-import React from "react";
-import classNames from "classnames";
+import { useEffect } from 'react'
 
-import styles from "./BaseDropdownMenu.module.scss";
-import {useOutsideClick} from "@/hooks/useOutsideClick";
+import classNames from 'classnames'
 
-const BaseDropdownMenu = ({className, itemClassName, children, textHeader, onClickOutside}) => {
+import { useOutsideClick } from '@/hooks/useOutsideClick'
+import useDevices from '../../../hooks/useDevices'
+
+import styles from './BaseDropdownMenu.module.scss'
+
+const BaseDropdownMenu = ({ className, children, textHeader, onClickOutside }) => {
     const ref = useOutsideClick(onClickOutside, true);
+    const { isDesktop } = useDevices()
+
+    useEffect(() => {
+        if (!isDesktop) {
+            document.body.style.overflow = 'hidden'
+        }
+    
+        return () => {
+            document.body.style.overflow = 'auto'
+        }
+    }, [isDesktop])
 
     return (
         <div className={classNames(styles.baseDropdownMenuWrapper, className)} ref={ref}>
@@ -17,4 +31,4 @@ const BaseDropdownMenu = ({className, itemClassName, children, textHeader, onCli
     )
 }
 
-export default BaseDropdownMenu;
+export default BaseDropdownMenu

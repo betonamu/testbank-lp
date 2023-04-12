@@ -18,8 +18,8 @@
     }
 }
 
-@mixin darkMode {
-    [data-theme="dark"] {
+@mixin wideScreen {
+    @media screen and (min-width: #{$wide-screen}) {
         @content;
     }
 }
@@ -27,6 +27,7 @@
 @mixin button {
     outline: none;
     cursor: pointer;
+
     &:hover {
         outline: none;
     }

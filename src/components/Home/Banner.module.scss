@@ -2,6 +2,7 @@
 
 .background {
     width: 100%;
+
     @include largeScreen {
         background: url("/images/home/banner/bg-blur.png") no-repeat padding-box;
     }
@@ -10,7 +11,7 @@
 .banner-wrapper {
     display: flex;
     width: 100%;
-    align-items: end;
+    align-items: flex-end;
     box-sizing: border-box;
     flex-direction: column;
     margin-top: 64px;
@@ -25,9 +26,10 @@
         display: flex;
         width: 100%;
         flex-direction: column;
-        justify-content: end;
+        justify-content: flex-end;
         row-gap: 20px;
         order: 1;
+
         @include largeScreen {
             order: 0;
             width: 50%;
@@ -36,6 +38,7 @@
         .title {
             font-size: 24px;
             line-height: 36px;
+
             @include largeScreen {
                 font-size: 48px;
                 line-height: 78px;
@@ -47,6 +50,7 @@
                 background: rgba(255, 153, 0, 0.1);
                 border: 2px solid #F76E48;
                 border-radius: 12px;
+
                 @include largeScreen {
                     border-radius: 24px;
                     padding: 0 $md-padding;
@@ -57,6 +61,7 @@
         .description {
             width: 100%;
             line-height: 24px;
+
             @include largeScreen {
                 width: 80%;
             }

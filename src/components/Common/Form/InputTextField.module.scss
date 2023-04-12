@@ -1,70 +1,113 @@
-@import "../../../assets/scss/global.scss";
+@import "@assets/scss/global";
 
 .input-text-field {
-    label {
-        font-size: 12px;
-        line-height: 18px;
+    .input-group {
+        border: 1px solid #E8ECEE;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
 
-        span {
-            margin-left: 3px;
-            color: #202226;
+        &:focus-within {
+            border-color: $secondary-color;
+        }
+
+        div {
+            position: relative;
+            height: 54px;
+            width: 100%;
+
+            input {
+                position: absolute;
+                box-sizing: border-box;
+                border: 0;
+                left: 0;
+                right: 0;
+                padding: 16px;
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 22px;
+                color: #202226;
+
+                &.is-password {
+                    right: 20px;
+                }
+
+                &:focus {
+                    bottom: -10px;
+
+                    &~.label {
+                        top: 30%;
+                        color: $secondary-color;
+
+                        &::placeholder {
+                            display: none;
+                        }
+                    }
+                }
+
+                &.has-data-input {
+                    bottom: -10px;
+                }
+
+                &:-webkit-autofill {
+                    transition: background-color 999999999999s ease-in-out 0s;
+                }
+            }
+
+            .label {
+                position: absolute;
+                pointer-events: none;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                padding-left: 16px;
+                font-size: 12px;
+                transition: all .2s ease-in-out;
+
+                &.has-data {
+                    color: $secondary-color;
+                    top: 30%;
+                    visibility: visible;
+                }
+            }
+        }
+
+        input[type=password]::-ms-reveal {
+            display: none;
+        }
+
+        &.has-icon-left {
+            padding-left: 28px;
+        }
+
+        &.has-icon-right {
+            padding-right: 28px;
+        }
+
+        &::placeholder {
+            color: #8E91A0;
         }
     }
 
-    .input-group {
-        position: relative;
+    .icon-left {
+        position: absolute;
+        top: 9px;
+        left: 4px;
+        width: 20px;
+    }
 
-        input {
-            height: 54px;
-            width: 100%;
-            border: 1px solid #E8ECEE;
-            border-radius: 10px;
-            box-sizing: border-box;
-            padding: 16px;
-            font-weight: 500;
-            font-size: 15px;
-            line-height: 22px;
-            color: #202226;
-
-
-            &.has-icon-left {
-                padding-left: 28px;
-            }
-
-            &.has-icon-right {
-                padding-right: 28px;
-            }
-
-            &:focus {
-                border-color: #7868E4;
-            }
-
-            &::placeholder{
-                color: #8E91A0;
-            }
-        }
-
-        .icon-left {
-            position: absolute;
-            top: 9px;
-            left: 4px;
-            width: 20px;
-        }
-
-        .icon-right {
-            position: absolute;
-            top: 9px;
-            right: 4px;
-            width: 20px;
-        }
+    .icon-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 8px;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
     }
 
     &.error {
-        label {
-            color: #f33060;
-        }
-
-        input {
+        .input-group {
             border-color: #F54135;
         }
 

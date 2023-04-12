@@ -1,12 +1,11 @@
-import React, {useEffect, useRef, useState} from "react";
+import classNames from "classnames";
+import { useRef, useState } from "react";
 
-import AvatarIcon from "../../../assets/icons/ic-avt.svg";
-import ChevronIcon from "../../../assets/icons/chevron-down.svg";
+import ChevronIcon from "@assets/icons/chevron-down.svg";
 
 import styles from "./Select.module.scss";
-import classNames from "classnames";
 
-const Select = ({options, defaultValue, onChange, className}) => {
+const Select = ({options, defaultValue, onChange, className, disable}) => {
     const [isShow, setIsShow] = useState(false);
     const [selectedItem, setSelectedItem] = useState({...defaultValue});
     const ref = useRef();
@@ -17,7 +16,9 @@ const Select = ({options, defaultValue, onChange, className}) => {
     }
 
     return (
-        <div className={classNames(styles.selectWrapper, className)}
+        <div className={classNames(styles.selectWrapper, className, {
+            [styles.disable]: disable
+        })}
              id={'select'}
              onClick={() => setIsShow(!isShow)}>
             <div className={styles.select}>
@@ -38,10 +39,9 @@ const Select = ({options, defaultValue, onChange, className}) => {
                              [styles.active]: item.value === selectedItem.value
                          })}
                          onClick={() => onSelectedItem(item)}>
-                        {item.label}
+                        {t(item.label)}
                     </div>
                 ))}
-
             </div>}
         </div>
     )
